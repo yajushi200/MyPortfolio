@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"
+        charset="utf-8"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yajushi Garg Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <!-- Navbar header section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <h2 class="logo-heading">YG</h2>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars hamburger-icon"></i>
+                <i class="fas fa-times cross-icon"></i>
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li class="menu-list-items">
+                        <a class="links" href="#home">
+                            Home
+                        </a>
+                    </li>
+                    <li class="menu-list-items">
+                        <a class="links" href="#skills">
+                            Services
+                        </a>
+                    </li>
+                    <li class="menu-list-items">
+                        <a class="links" href="#about">
+                            About
+                        </a>
+                    </li>
+                    <li class="menu-list-items">
+                        <a class="links" href="#portfolio">
+                            Portfolio
+                        </a>
+                    </li>
+
+
+                    <!-- <li class="menu-list-items">
+                        <a class="links" href="#contact">
+                            Contact Me
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main banner -->
+    <section id="home" class="hero">
+        <div class="intro" style="text-align: center; position: relative;">
+            <div class="headings">
+                <!-- Dynamic greeting -->
+                <h3 class="greet-heading">Hello, I'm</h3>
+                <!-- Dynamic name with animation -->
+                <h1 class="my-heading" style="animation: slideIn 2s ease-out;">Yajushi Garg</h1>
+                <!-- Dynamic description -->
+                <br>
+                <h3 class="sub-heading">A Software Engineering Technology - Artificial Intelligence Student at
+                    Centennial College</h3>
+            </div>
+            <div class="intro-buttons">
+                <!-- Dynamic button with hover effect -->
+                <a href="Yajushi_CV.pdf" target="_blank" class="btn ghost-btn"
+                    style="animation: pulse 1s infinite alternate;">Get Resume</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+
+    <section class="skills" id="skills">
+        <div class="skills-heading">
+            <h1 class="my-heading text-center">My Skills</h1>
+        </div>
+        <br>
+        <br>
+        <div class="skills-content">
+            <div class="skills-list-container">
+                <div class="container">
+                    <div class="box">
+                        <div class="chart" data-percent="90">92%</div>
+                        <h2>Web Development</h2>
+                    </div>
+                    <div class="box">
+                        <div class="chart" data-percent="80">80%</div>
+                        <h2>Data Analytics</h2>
+                    </div>
+                    <div class="box">
+                        <div class="chart" data-percent="88">88%</div>
+                        <h2>Oracle/PL/SQL</h2>
+                    </div>
+                    <div class="box">
+                        <div class="chart" data-percent="75">75%</div>
+                        <h2>Artificial Intelligence</h2>
+                    </div>
+                    <!--  <div class="box">
+                        <div class="chart" data-percent="81">81%</div>
+                        <h2>Oracle/PL/SQL</h2>
+                    </div> -->
+                    <div class="skills-item">
+                        <div class="skills-card">
+                            <h3 class="greet-heading blue-text">Programming</h3>
+                            <ul class="skill-list">
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Python</li>
+                                <li>SQL</li>
+                                <li>C#</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skills-item">
+                        <div class="skills-card">
+                            <h3 class="greet-heading blue-text">OS & Tools</h3>
+                            <ul class="skill-list">
+                                <li>Windows</li>
+                                <li>Unix/Linux</li>
+                                <li>Jira</li>
+                                <li>VS Code</li>
+                                <li>Visio</li>
+                                <li>Power BI</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skills-item">
+                        <div class="skills-card">
+                            <h3 class="greet-heading blue-text">Frameworks</h3>
+                            <ul class="skill-list">
+                                <li>.NET</li>
+                                <li>React</li>
+                                <li>Express.js</li>
+                                <li>MongoDB</li>
+                                <li>Node JS</li>
+                                <li>GitHub</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="skills-item">
+                        <div class="skills-card">
+                            <h3 class="greet-heading blue-text">AI</h3>
+                            <ul class="skill-list">
+                                <li>Machine Learning</li>
+                                <li>Data Modelling</li>
+                                <li>Neural Networks</li>
+                                <li>Natural Processing Language(NLP)</li>
+                                <li>Search Algorithms</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <script type="text/javascript">
+        $(function () {
+            $('.chart').easyPieChart({
+                size: 175,
+                barColor: "#35A99C",
+                scaleLength: 0,
+                lineWidth: 20,
+                trackColor: "grey",
+                lineCap: "circle",
+                animate: 2000,
+            });
+        });
+    </script>
+
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-text">
+            <h1 id="myHeading" class="my-heading" style="text-align: center;">About Me</h1>
+
+            <p class="lead-para" style="text-align: justify;">
+
+                <br>
+            <ul>Software Engineering Technology student at Centennial College
+                specializing in Artificial Intelligence</ul>
+            <br>
+            <ul>Passionate for innovation and problem-solving, I thrive in
+                the dynamic world of software engineering.</ul>
+            <br>
+            <ul>Proficient in languages such as Python, Java, Java Script and C#, I leverage my technical expertise to
+                develop
+                robust and scalable solutions.
+            </ul>
+            <br>
+            <ul>Also, familiar with machine learning algorithms and data structures
+                equips me to tackle complex challenges in AI development. </ul>
+            <br>
+            <ul>I'm not just about code—I'm a great listener, too, fostering
+                teamwork and clear communication.</ul>
+            <br>
+            </p>
+
+        </div>
+        <div class="about-image">
+            <img src="images/PICTURE.jpg" alt="About Image">
+        </div>
+    </section>
+
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-heading">
+            <h1 class="my-heading text-center">Featured Portfolio</h1>
+        </div>
+        <div class="portfolio-content">
+            <div class="my-row">
+                <div class="my-col">
+                    <a href="https://black-jack-red.vercel.app/"> <!-- Replace "project1_link.html" with your actual project link -->
+                        <div class="my-card port-card">
+                            <div class="image">
+                                <img src="images/BJ.jpeg" alt="Web Design Image">
+                            </div>
+                            <h3 class="greet-heading blue-text">Web Design</h3>
+                            <p class="small-para blue-text">Designing</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="my-col">
+                    <a href="https://black-jack-red.vercel.app/"> <!-- Replace "project1_link.html" with your actual project link -->
+                        <div class="my-card port-card">
+                            <div class="image">
+                                <img src="images/BJ.jpeg" alt="Web Design Image">
+                            </div>
+                            <h3 class="greet-heading blue-text">Web Design</h3>
+                            <p class="small-para blue-text">Designing</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Add more rows and columns for additional projects if needed -->
+        </div>
+    </section>
+    
+
+
+
+
+
+
+
+    <!-- Contact me section -->
+    <!-- <section class="contact" id="contact">
+        <div class="contact-heading">
+            <h1 class="my-heading text-center">Contact Me</h1>
+        </div>
+        <br>
+        <br> -->
+    <!-- <div class="contact-content">
+            <div class="contact-form-container">
+                <h1 class="greet-heading">Get In Touch</h1>
+                <form class="contact-form">
+                    <input class="form-controls" type="text" placeholder="Your Name">
+                    <input class="form-controls" type="text" placeholder="Your Email">
+                    <input class="form-controls" type="text" placeholder="Your Phone">
+                    <textarea class="form-controls" placeholder="Write your message" name="message" id="" cols="30"
+                        rows="10">
+					</textarea>
+                    <input class="form-btn btn common-btn" type="submit" value="Send Message">
+                </form>
+            </div> -->
+    <!-- <div class="contact">
+                <div class="contact-details">
+                    <h1 class="greet-heading">My Contact Details</h1>
+                    <div class="details">
+                         <h5 class="contact-heading">EMAIL</h5> 
+                        <p class="contact-text"><i class="fas fa-envelope"></i><a href="mailto:yajushigarg@gmail.com">yajushigarg@gmail.com</a></p>
+                    </div>
+                    <div class="details">
+                        <h5 class="contact-heading">PHONE</h5> 
+                        <p class="contact-text"><i class="fas fa-phone"></i>437-983-6235</p>
+                    </div>
+                    <div class="details">
+                        <h5 class="contact-heading">ADDRESS</h5> 
+                        <p class="contact-text"><i class="fas fa-map-marker-alt"></i>Toronto, ON</p>
+                        <p>Scarborough</p>
+                        <p>24 Vanwar Drive, M1G 1G7</p>
+                    </div>
+                </div>
+            </div>
+            
+    </section> -->
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="social-links">
+            <div class="footer-menu">
+
+                <a class="footer-links" href="mailto:yajushigarg@gmail.com" style="color: #53C8B6;">
+                    <i class="far fa-envelope"></i> yajushigarg@gmail.com
+                </a>
+
+                <ul class="footer-menu-list">
+
+
+                    <li class="footer-list-items">
+                        <a class="footer-links" href="https://github.com/yajushi200">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+
+                    <li class="footer-list-items">
+                        <a class="footer-links" href="https://www.instagram.com/yajushi_garg1207/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="footer-list-items">
+                        <a class="footer-links" href="https://www.linkedin.com/in/yajushigarg1207/">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-content text-center">
+            <h4>
+                Copyright © 2024 All rights reserved |
+                This portfolio website is created
+                by Yajushi Garg.
+            </h4>
+
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
