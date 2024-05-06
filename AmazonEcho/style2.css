@@ -1,0 +1,58 @@
+body {
+    max-width: 980 px;
+    background-color: mistyrose;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto;
+}
+
+
+h5 {
+    max-width: 980px;
+    color: darkgoldenrod font-weight: bold;
+    font-size: larger;
+    margin: auto;
+
+}
+
+
+
+
+
+p {
+
+    max-width: 980px;
+    margin: auto;
+    border-width: 2px;
+    border-style: none;
+    overflow: auto;
+
+    border: 10px;
+    padding-left: 50px;
+    color: darkred
+}
+
+table,
+th,
+td {
+    max-width: 980px;
+    overscroll-behavior-x: ;
+    overflow: auto;
+    table-layout: auto;
+    width: 980px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 40px;
+    color: rgb(61, 61, 1);
+}
+
+footer {
+    max-width: 980px;
+    margin: auto;
+
+}
