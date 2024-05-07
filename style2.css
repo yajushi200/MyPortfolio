@@ -55,9 +55,12 @@
     }
     
     .skills {
-        width: 100%; /* Adjust width to ensure the skills section is fully visible */
+        width: 90%; /* Adjust the width to create more space for the skill bars */
     }
 
+    .skill-bar {
+        width: 95%; /* Adjust the width of the skill bars to fit within the container */
+    }
 }
 
 
@@ -140,8 +143,12 @@
         width: 100%;
     }
     
-    .skills {
-        width: 100%; /* Adjust width to ensure the skills section is fully visible */
+	.skills {
+        width: 100%; /* Adjust the width to ensure full visibility on smaller screens */
+    }
+
+    .skill-bar {
+        width: 95%; /* Adjust the width of the skill bars to fit within the container */
     }
 
     .contact {
