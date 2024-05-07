@@ -53,6 +53,10 @@
         text-align: center;
         width: 35%;
     }
+    
+    .skills {
+        width: 100%; /* Adjust width to ensure the skills section is fully visible */
+    }
 
 }
 
@@ -134,6 +138,10 @@
     .my-row .my-col {
         text-align: center;
         width: 100%;
+    }
+    
+    .skills {
+        width: 100%; /* Adjust width to ensure the skills section is fully visible */
     }
 
     .contact {
