@@ -11,6 +11,8 @@
     <title>Yajushi Garg Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -60,164 +62,414 @@
 
     <!-- Main banner -->
     <section id="home" class="hero">
-        <div class="intro" style="text-align: center; position: relative;">
-            <div class="headings">
-                <!-- Dynamic greeting -->
-                <h3 class="greet-heading">Hello, I'm</h3>
-                <!-- Dynamic name with animation -->
-                <h1 class="my-heading" style="animation: slideIn 2s ease-out;">Yajushi Garg</h1>
-                <!-- Dynamic description -->
-                <br>
-                <h3 class="sub-heading">A Software Engineering Technology - Artificial Intelligence Student at
-                    Centennial College</h3>
-            </div>
+        <div class="hero-left">
+            <h3 class="greet-heading">Hi, I'm</h3>
+            <h1 class="my-heading" id="typed-name"></h1>
+            <h3 class="sub-heading" id="rotating-text">AI Engineer</h3>
+            <p class="hero-desc">Building intelligent solutions with data and AI</p>
             <div class="intro-buttons">
-                <!-- Dynamic button with hover effect -->
-                <a href="YajushiRESUMEUpdated_2025.pdf" target="_blank" class="btn ghost-btn"
-                    style="animation: pulse 1s infinite alternate;">Get Resume</a>
-
+                <a href="YajushiRESUMEUpdated_2025.pdf" target="_blank" class="btn common-btn">Download Resume</a>
+                <a href="#portfolio" class="btn ghost-btn">View Projects</a>
             </div>
+        </div>
+        <div class="hero-right">
+            <div class="speech-bubble">
+                Lets Connect! 🚀
+                <span class="bubble-arrow"></span>
+            </div>
+            <lottie-player src="AI _bot.json" background="transparent" speed="1" loop autoplay>
+            </lottie-player>
         </div>
     </section>
 
-    <!-- Services Section -->
-
+    <!-- Skills Section -->
     <section class="skills" id="skills">
         <div class="skills-heading">
             <h1 class="my-heading text-center">My Skills</h1>
-        </div>
-        <br>
-        <br>
-        <div class="skills-content">
-            <div class="skills-list-container">
-                <div class="container">
-                    <div class="box">
-                        <div class="chart" data-percent="90">92%</div>
-                        <h2>Web Development</h2>
-                    </div>
-                    <div class="box">
-                        <div class="chart" data-percent="80">80%</div>
-                        <h2>Data Analytics</h2>
-                    </div>
-                    <div class="box">
-                        <div class="chart" data-percent="88">88%</div>
-                        <h2>Oracle/PL/SQL</h2>
-                    </div>
-                    <div class="box">
-                        <div class="chart" data-percent="75">75%</div>
-                        <h2>Artificial Intelligence</h2>
-                    </div>
-                    <!--  <div class="box">
-                        <div class="chart" data-percent="81">81%</div>
-                        <h2>Oracle/PL/SQL</h2>
-                    </div> -->
-                    <div class="skills-item">
-                        <div class="skills-card">
-                            <h3 class="greet-heading blue-text">Programming</h3>
-                            <ul class="skill-list">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Python</li>
-                                <li>SQL</li>
-                                <li>C#</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="skills-item">
-                        <div class="skills-card">
-                            <h3 class="greet-heading blue-text">OS & Tools</h3>
-                            <ul class="skill-list">
-                                <li>Windows</li>
-                                <li>Unix/Linux</li>
-                                <li>Jira</li>
-                                <li>VS Code</li>
-                                <li>Visio</li>
-                                <li>Power BI</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="skills-item">
-                        <div class="skills-card">
-                            <h3 class="greet-heading blue-text">Frameworks</h3>
-                            <ul class="skill-list">
-                                <li>.NET</li>
-                                <li>React</li>
-                                <li>Express.js</li>
-                                <li>MongoDB</li>
-                                <li>Node JS</li>
-                                <li>GitHub</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="skills-item">
-                        <div class="skills-card">
-                            <h3 class="greet-heading blue-text">AI</h3>
-                            <ul class="skill-list">
-                                <li>Machine Learning</li>
-                                <li>Data Modelling</li>
-                                <li>Neural Networks</li>
-                                <li>Natural Processing Language(NLP)</li>
-                                <li>Search Algorithms</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p class="skills-subheading">Click a category to explore</p>
         </div>
 
+        <div class="skills-tabs">
+            <button class="tab-btn active" onclick="filterSkills('all')">All</button>
+            <button class="tab-btn" onclick="filterSkills('data')">Data Analytics</button>
+            <button class="tab-btn" onclick="filterSkills('cloud')">Cloud</button>
+            <button class="tab-btn" onclick="filterSkills('ai')">AI and ML</button>
+            <button class="tab-btn" onclick="filterSkills('dev')">Development</button>
+            <button class="tab-btn" onclick="filterSkills('tools')">Tools</button>
+        </div>
+
+        <div class="skills-grid" id="skills-grid">
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">🐍</div>
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">🗄️</div>
+                <h3>SQL</h3>
+
+            </div>
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">📊</div>
+                <h3>Power BI</h3>
+
+            </div>
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">📈</div>
+                <h3>Excel</h3>
+
+            </div>
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">🔍</div>
+                <h3>Tableau</h3>
+
+            </div>
+
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">☁️</div>
+                <h3>AWS Glue</h3>
+
+            </div>
+
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">🪣</div>
+                <h3>AWS S3</h3>
+
+            </div>
+
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">🏢</div>
+                <h3>AWS Redshift</h3>
+
+            </div>
+
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">🔷</div>
+                <h3>Azure</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">🌐</div>
+                <h3>Google Cloud</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">🧱</div>
+                <h3>Databricks</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🤖</div>
+                <h3>Machine Learning</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">💬</div>
+                <h3>NLP</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🧠</div>
+                <h3>Neural Networks</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🔗</div>
+                <h3>LangChain</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🕸️</div>
+                <h3>LangGraph</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🗃️</div>
+                <h3>ChromaDB</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">🌐</div>
+                <h3>HTML and CSS</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">⚡</div>
+                <h3>JavaScript</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">⚛️</div>
+                <h3>React</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">🟢</div>
+                <h3>Node.js</h3>
+
+
+
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">🔷</div>
+                <h3>C#</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">🍃</div>
+                <h3>MongoDB</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="tools">
+                <div class="skill-icon">🐙</div>
+                <h3>Git and GitHub</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="tools">
+                <div class="skill-icon">📋</div>
+                <h3>Jira</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="tools">
+                <div class="skill-icon">🔧</div>
+                <h3>ETL Pipelines</h3>
+
+
+            </div>
+
+            <div class="skill-card" data-category="tools">
+                <div class="skill-icon">📐</div>
+                <h3>Visio</h3>
+
+            </div>
+
+            <div class="skill-card" data-category="tools">
+                <div class="skill-icon">💻</div>
+                <h3>VS Code</h3>
+
+
+            </div>
+            <!-- Data Analytics additions -->
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">🐼</div>
+                <h3>Pandas</h3>
+            </div>
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">🔢</div>
+                <h3>NumPy</h3>
+            </div>
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">📉</div>
+                <h3>Matplotlib</h3>
+            </div>
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">🎨</div>
+                <h3>Seaborn</h3>
+            </div>
+
+            <div class="skill-card" data-category="data">
+                <div class="skill-icon">⚡</div>
+                <h3>PySpark</h3>
+            </div>
+
+            <!-- AI/ML additions -->
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🧬</div>
+                <h3>TensorFlow</h3>
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🔬</div>
+                <h3>Keras</h3>
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">📐</div>
+                <h3>Scikit-Learn</h3>
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🔥</div>
+                <h3>PyTorch</h3>
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🗣️</div>
+                <h3>NLTK</h3>
+            </div>
+
+            <div class="skill-card" data-category="ai">
+                <div class="skill-icon">🕷️</div>
+                <h3>SpaCy</h3>
+            </div>
+
+            <!-- Cloud additions -->
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">⚙️</div>
+                <h3>AWS Lambda</h3>
+            </div>
+
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">🔐</div>
+                <h3>AWS IAM</h3>
+            </div>
+
+            <div class="skill-card" data-category="cloud">
+                <div class="skill-icon">🌊</div>
+                <h3>Apache Spark</h3>
+            </div>
+
+            <!-- Dev additions -->
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">📘</div>
+                <h3>TypeScript</h3>
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">🗂️</div>
+                <h3>PL/SQL</h3>
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">🐬</div>
+                <h3>MySQL</h3>
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">🔶</div>
+                <h3>Oracle DB</h3>
+            </div>
+
+            <div class="skill-card" data-category="dev">
+                <div class="skill-icon">⚡</div>
+                <h3>DynamoDB</h3>
+            </div>
+
+            <!-- Tools additions -->
+            <div class="skill-card" data-category="tools">
+                <div class="skill-icon">🐳</div>
+                <h3>Docker</h3>
+            </div>
+
+            <div class="skill-card" data-category="tools">
+                <div class="skill-icon">⚡</div>
+                <h3>Power Apps</h3>
+            </div>
+
+        </div>
     </section>
-    <script type="text/javascript">
-        $(function () {
-            $('.chart').easyPieChart({
-                size: 175,
-                barColor: "#35A99C",
-                scaleLength: 0,
-                lineWidth: 20,
-                trackColor: "grey",
-                lineCap: "circle",
-                animate: 2000,
+
+    <script>
+        function filterSkills(category) {
+            const cards = document.querySelectorAll('.skill-card');
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                    setTimeout(() => card.style.opacity = 1, 10);
+                } else {
+                    card.style.opacity = 0;
+                    card.style.display = 'none';
+                }
             });
-        });
+        }
     </script>
 
-
+    <!-- About Section -->
     <!-- About Section -->
     <section id="about" class="about">
         <div class="about-text">
-            <h1 id="myHeading" class="my-heading" style="text-align: center;">About Me</h1>
-
-            <p class="lead-para" style="text-align: justify;">
-
-                <br>
-            <ul>Software Engineering Technology student at Centennial College
-                specializing in Artificial Intelligence</ul>
-            <br>
-            <ul>Passionate for innovation and problem-solving, I thrive in
-                the dynamic world of software engineering.</ul>
-            <br>
-            <ul>Proficient in languages such as Python, Java, Java Script and C#, I leverage my technical expertise to
-                develop
-                robust and scalable solutions.
-            </ul>
-            <br>
-            <ul>Also, familiar with machine learning algorithms and data structures
-                equips me to tackle complex challenges in AI development. </ul>
-            <br>
-            <ul>I'm not just about code—I'm a great listener, too, fostering
-                teamwork and clear communication.</ul>
-            <br>
+            <h1 class="my-heading">About <span style="color:#35A99C">Me</span></h1>
+            <p class="about-desc">
+                Honours graduate from <span class="highlight">Centennial College</span> with an Advanced Diploma in
+                Software Engineering Technology specializing in Artificial Intelligence,
+                graduating with a <span class="highlight">GPA of 4.299 out of 4.5.</span>
             </p>
+
+            <p class="about-desc">
+                <span class="highlight">Data Analyst Intern</span> at Scriptics Technologies — built ETL pipelines,
+                Power BI dashboards, and AWS workflows using Glue, S3 and Redshift.
+                Also worked as a <span class="highlight">Software Lab Assistant</span> at Centennial College
+                supporting students with technical tools and coursework.
+                Previously served as an <span class="highlight">IT Technologist Intern</span> handling
+                system support and infrastructure tasks.
+            </p>
+
+            <p class="about-desc">
+                Built <span class="highlight">Luminate AI</span> — a multi-agent tutoring system using LangGraph,
+                LangChain, ChromaDB and Google Gemini. Developed a
+                <span class="highlight">Marine Species Classifier</span> with 91.82% accuracy using ResNet50,
+                and an <span class="highlight">Amazon Reviews Sentiment Analysis</span> system using NLP pipelines.
+            </p>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <h2>4.28</h2>
+                    <p>GPA out of 4.5</p>
+                </div>
+                <div class="stat-box">
+                    <h2>3+</h2>
+                    <p>Certifications</p>
+                </div>
+                <div class="stat-box">
+                    <h2>10+</h2>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-box">
+                    <h2>1+</h2>
+                    <p>Years Experience</p>
+                </div>
+            </div>
 
         </div>
         <div class="about-image">
-            <img src="images/me.jpg" alt="About Image">
+            <div class="image-wrapper">
+                <img src="images/me.jpg" alt="Yajushi Garg">
+            </div>
         </div>
     </section>
 
-    <br>
-    <br>
-    <br>
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="portfolio-heading">
@@ -270,7 +522,7 @@
 
                     </div>
                 </a>
-             
+
                 <a href="SpamEmails.pdf">
                     <div class="my-card port-card">
                         <div class="image">
@@ -373,6 +625,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
         </script>
     <script src="main.js"></script>
+    <script>
+        // Typing animation
+        const name = "Yajushi Garg";
+        let charIndex = 0;
+        const nameEl = document.getElementById('typed-name');
+        const typeInterval = setInterval(() => {
+            nameEl.textContent += name[charIndex];
+            charIndex++;
+            if (charIndex === name.length) clearInterval(typeInterval);
+        }, 100);
+
+        // Smooth rotating text
+        const roles = ["AI Engineer", "Data Analyst", "ML Enthusiast", "Business Analyst"];
+        let i = 0;
+        const el = document.getElementById('rotating-text');
+        setInterval(() => {
+            el.style.opacity = 0;
+            setTimeout(() => {
+                i = (i + 1) % roles.length;
+                el.textContent = roles[i];
+                el.style.opacity = 1;
+            }, 500);
+        }, 2500);
+    </script>
 </body>
 
 </html>
