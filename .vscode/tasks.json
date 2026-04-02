@@ -17,6 +17,14 @@
 			"args": [],
 			"isBackground": false,
 			"group": "build"
+		},
+		{
+			"label": "Run Portfolio Website Locally",
+			"type": "shell",
+			"command": "npx serve . -l 5500",
+			"args": [],
+			"isBackground": false,
+			"group": "build"
 		}
 	]
 }
