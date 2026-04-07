@@ -59,6 +59,11 @@
                         </a>
                     </li>
                     <li class="menu-list-items">
+                        <a class="links" href="#education">
+                            Education
+                        </a>
+                    </li>
+                    <li class="menu-list-items">
                         <a class="links" href="#awards">
                             Awards
                         </a>
@@ -204,7 +209,7 @@
             </p>
             <div class="about-stats">
                 <div class="stat-box">
-                    <h2>4.28</h2>
+                    <h2>4.299</h2>
                     <p>GPA out of 4.5</p>
                 </div>
                 <div class="stat-box">
@@ -229,11 +234,68 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <h1 class="my-heading text-center">Education</h1>
+        <p class="skills-subheading">Academic foundation and qualifications</p>
+        <div class="degree-card-wrapper">
+            <div class="degree-card" id="degreeCard">
+                <div class="honours-ribbon">Honours</div>
+                <div class="degree-card-main">
+                    <div class="degree-icon-wrap">🎓</div>
+                    <div class="degree-body">
+                        <div class="degree-header-row">
+                            <div>
+                                <h3 class="degree-title">Honours Advanced Diploma</h3>
+                                <p class="degree-program">Software Engineering Technology — Artificial Intelligence</p>
+                            </div>
+                            <span class="degree-badge">🎓 Honours Degree</span>
+                        </div>
+                        <div class="degree-meta">
+                            <span>🏫 Centennial College, Toronto</span>
+                            <span>📅 2022 – 2024</span>
+                        </div>
+                        <div class="degree-gpa">
+                            <span class="gpa-label">GPA</span>
+                            <div class="gpa-bar-wrap">
+                                <div class="gpa-bar" style="width: 95.53%"></div>
+                            </div>
+                            <span class="gpa-value">4.299 / 4.5</span>
+                        </div>
+                        <button class="degree-toggle-btn" onclick="toggleDegreeDetails()">
+                            View Details <span class="toggle-arrow" id="toggleArrow">▼</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="degree-details" id="degreeDetails">
+                    <div class="degree-details-inner">
+                        <div class="degree-courses">
+                            <h5>📚 Key Coursework</h5>
+                            <ul>
+                                <li>Machine Learning &amp; Deep Learning</li>
+                                <li>Cloud Computing (AWS &amp; Azure)</li>
+                                <li>Data Structures &amp; Algorithms</li>
+                                <li>Natural Language Processing</li>
+                            </ul>
+                        </div>
+                        <div class="degree-capstone">
+                            <h5>🚀 Capstone Project</h5>
+                            <p><strong>Luminate AI</strong> — A multi-agent AI tutoring system built with LangGraph, Groq LLMs, and Streamlit. Features intelligent routing across specialised agents for adaptive, context-aware learning experiences.</p>
+                        </div>
+                        <a href="Certifications/Advanced_Diploma.pdf" target="_blank" rel="noopener" class="degree-view-btn">
+                            📄 View Diploma
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Certifications Section -->
     
     <section class="certifications" id="certifications">
         <h1 class="my-heading text-center">Certifications</h1>
-        <p class="skills-subheading">Recognised credentials and achievements</p>
+        <p class="skills-subheading">Professional certifications</p>
         <div class="certs-grid">
             <a class="cert-card" href="Certifications/Udemy_Certificate.jpg" target="_blank" rel="noopener">
                 <div class="cert-icon">☁️</div>
@@ -249,14 +311,6 @@
                     <h4>Google Data Analytics Certificate</h4>
                     <p>Google / Coursera</p>
                     <span class="cert-badge">Data Analytics</span>
-                </div>
-            </a>
-            <a class="cert-card" href="Certifications/Advanced_Diploma.pdf" target="_blank" rel="noopener">
-                <div class="cert-icon">🤖</div>
-                <div class="cert-info">
-                    <h4>Advanced Diploma — Software Engineering (AI)</h4>
-                    <p>Centennial College · GPA 4.299 / 4.5</p>
-                    <span class="cert-badge">AI Specialisation</span>
                 </div>
             </a>
             <a class="cert-card" href="https://learn.microsoft.com/en-us/users/yajushigarg-0213/credentials/927d2bdb1408b3bf" target="_blank" rel="noopener">
@@ -556,6 +610,16 @@
                     setTimeout(() => successMsg.style.display = 'none', 5000);
                 }
             });
+        }
+
+        // Degree card accordion
+        function toggleDegreeDetails() {
+            const details = document.getElementById('degreeDetails');
+            const arrow   = document.getElementById('toggleArrow');
+            const btn     = document.querySelector('.degree-toggle-btn');
+            const isOpen  = details.classList.toggle('open');
+            arrow.textContent = isOpen ? '▲' : '▼';
+            btn.innerHTML     = (isOpen ? 'Hide Details ' : 'View Details ') + '<span class="toggle-arrow" id="toggleArrow">' + (isOpen ? '▲' : '▼') + '</span>';
         }
     </script>
 
