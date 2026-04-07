@@ -9,8 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yajushi Garg Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='15' fill='%2335A99C'/><text x='50' y='72' font-size='50' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>YG</text></svg>">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -35,7 +37,7 @@
                     </li>
                     <li class="menu-list-items">
                         <a class="links" href="#skills">
-                            Services
+                            Skills
                         </a>
                     </li>
                     <li class="menu-list-items">
@@ -48,13 +50,11 @@
                             Portfolio
                         </a>
                     </li>
-
-
-                    <!-- <li class="menu-list-items">
+                    <li class="menu-list-items">
                         <a class="links" href="#contact">
                             Contact Me
                         </a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -77,8 +77,11 @@
                 Lets Connect! 🚀
                 <span class="bubble-arrow"></span>
             </div>
-            <lottie-player src="AI _bot.json" background="transparent" speed="1" loop autoplay>
-            </lottie-player>
+            <div class="lottie-wrapper">
+                <div class="lottie-skeleton" id="lottie-skeleton"></div>
+                <lottie-player id="lottie-player" src="AI _bot.json" background="transparent" speed="1" loop autoplay>
+                </lottie-player>
+            </div>
         </div>
     </section>
 
@@ -86,338 +89,28 @@
     <section class="skills" id="skills">
         <div class="skills-heading">
             <h1 class="my-heading text-center">My Skills</h1>
-            <p class="skills-subheading">Click a category to explore</p>
+            <p class="skills-subheading">Hover a card to see proficiency details · Click to pin</p>
+        </div>
+
+        <div class="skill-search-wrapper">
+            <input id="skill-search" class="skill-search" type="text" placeholder="🔍  Search skills…" autocomplete="off">
         </div>
 
         <div class="skills-tabs">
-            <button class="tab-btn active" onclick="filterSkills('all')">All</button>
-            <button class="tab-btn" onclick="filterSkills('data')">Data Analytics</button>
-            <button class="tab-btn" onclick="filterSkills('cloud')">Cloud</button>
-            <button class="tab-btn" onclick="filterSkills('ai')">AI and ML</button>
-            <button class="tab-btn" onclick="filterSkills('dev')">Development</button>
-            <button class="tab-btn" onclick="filterSkills('tools')">Tools</button>
+            <button class="tab-btn active" onclick="filterSkills('all', this)">All</button>
+            <button class="tab-btn" onclick="filterSkills('data', this)">Data Analytics</button>
+            <button class="tab-btn" onclick="filterSkills('cloud', this)">Cloud</button>
+            <button class="tab-btn" onclick="filterSkills('ai', this)">AI and ML</button>
+            <button class="tab-btn" onclick="filterSkills('dev', this)">Development</button>
+            <button class="tab-btn" onclick="filterSkills('tools', this)">Tools</button>
         </div>
 
         <div class="skills-grid" id="skills-grid">
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">🐍</div>
-                <h3>Python</h3>
-            </div>
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">🗄️</div>
-                <h3>SQL</h3>
-
-            </div>
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">📊</div>
-                <h3>Power BI</h3>
-
-            </div>
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">📈</div>
-                <h3>Excel</h3>
-
-            </div>
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">🔍</div>
-                <h3>Tableau</h3>
-
-            </div>
-
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">☁️</div>
-                <h3>AWS Glue</h3>
-
-            </div>
-
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">🪣</div>
-                <h3>AWS S3</h3>
-
-            </div>
-
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">🏢</div>
-                <h3>AWS Redshift</h3>
-
-            </div>
-
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">🔷</div>
-                <h3>Azure</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">🌐</div>
-                <h3>Google Cloud</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">🧱</div>
-                <h3>Databricks</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🤖</div>
-                <h3>Machine Learning</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">💬</div>
-                <h3>NLP</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🧠</div>
-                <h3>Neural Networks</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🔗</div>
-                <h3>LangChain</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🕸️</div>
-                <h3>LangGraph</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🗃️</div>
-                <h3>ChromaDB</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">🌐</div>
-                <h3>HTML and CSS</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">⚡</div>
-                <h3>JavaScript</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">⚛️</div>
-                <h3>React</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">🟢</div>
-                <h3>Node.js</h3>
-
-
-
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">🔷</div>
-                <h3>C#</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">🍃</div>
-                <h3>MongoDB</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon">🐙</div>
-                <h3>Git and GitHub</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon">📋</div>
-                <h3>Jira</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon">🔧</div>
-                <h3>ETL Pipelines</h3>
-
-
-            </div>
-
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon">📐</div>
-                <h3>Visio</h3>
-
-            </div>
-
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon">💻</div>
-                <h3>VS Code</h3>
-
-
-            </div>
-            <!-- Data Analytics additions -->
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">🐼</div>
-                <h3>Pandas</h3>
-            </div>
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">🔢</div>
-                <h3>NumPy</h3>
-            </div>
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">📉</div>
-                <h3>Matplotlib</h3>
-            </div>
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">🎨</div>
-                <h3>Seaborn</h3>
-            </div>
-
-            <div class="skill-card" data-category="data">
-                <div class="skill-icon">⚡</div>
-                <h3>PySpark</h3>
-            </div>
-
-            <!-- AI/ML additions -->
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🧬</div>
-                <h3>TensorFlow</h3>
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🔬</div>
-                <h3>Keras</h3>
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">📐</div>
-                <h3>Scikit-Learn</h3>
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🔥</div>
-                <h3>PyTorch</h3>
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🗣️</div>
-                <h3>NLTK</h3>
-            </div>
-
-            <div class="skill-card" data-category="ai">
-                <div class="skill-icon">🕷️</div>
-                <h3>SpaCy</h3>
-            </div>
-
-            <!-- Cloud additions -->
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">⚙️</div>
-                <h3>AWS Lambda</h3>
-            </div>
-
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">🔐</div>
-                <h3>AWS IAM</h3>
-            </div>
-
-            <div class="skill-card" data-category="cloud">
-                <div class="skill-icon">🌊</div>
-                <h3>Apache Spark</h3>
-            </div>
-
-            <!-- Dev additions -->
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">📘</div>
-                <h3>TypeScript</h3>
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">🗂️</div>
-                <h3>PL/SQL</h3>
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">🐬</div>
-                <h3>MySQL</h3>
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">🔶</div>
-                <h3>Oracle DB</h3>
-            </div>
-
-            <div class="skill-card" data-category="dev">
-                <div class="skill-icon">⚡</div>
-                <h3>DynamoDB</h3>
-            </div>
-
-            <!-- Tools additions -->
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon">🐳</div>
-                <h3>Docker</h3>
-            </div>
-
-            <div class="skill-card" data-category="tools">
-                <div class="skill-icon">⚡</div>
-                <h3>Power Apps</h3>
-            </div>
-
+            <!-- Skill flip cards are rendered by JavaScript below -->
         </div>
     </section>
 
-    <script>
-        function filterSkills(category) {
-            const cards = document.querySelectorAll('.skill-card');
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.style.display = 'flex';
-                    setTimeout(() => card.style.opacity = 1, 10);
-                } else {
-                    card.style.opacity = 0;
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
 
-    <!-- About Section -->
     <!-- About Section -->
     <section id="about" class="about">
         <div class="about-text">
@@ -470,6 +163,39 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
+    <!-- Update these with your actual certifications -->
+    <section class="certifications" id="certifications">
+        <h1 class="my-heading text-center">Certifications</h1>
+        <p class="skills-subheading">Recognised credentials and achievements</p>
+        <div class="certs-grid">
+            <div class="cert-card">
+                <div class="cert-icon">☁️</div>
+                <div class="cert-info">
+                    <h4>AWS Certified Cloud Practitioner</h4>
+                    <p>Amazon Web Services</p>
+                    <span class="cert-badge">Cloud</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">📊</div>
+                <div class="cert-info">
+                    <h4>Google Data Analytics Certificate</h4>
+                    <p>Google / Coursera</p>
+                    <span class="cert-badge">Data Analytics</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">🤖</div>
+                <div class="cert-info">
+                    <h4>Advanced Diploma — Software Engineering (AI)</h4>
+                    <p>Centennial College · GPA 4.299 / 4.5</p>
+                    <span class="cert-badge">AI Specialisation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="portfolio-heading">
@@ -483,24 +209,34 @@
                 <a href="https://black-jack-red.vercel.app/">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="images/BJ2.jpeg" alt="Web Design Image">
+                            <img src="images/BJ2.jpeg" alt="BlackJack Game">
+                        </div>
+                        <div class="card-overlay">
+                            <h4>BlackJack Card Game</h4>
+                            <p>Interactive card game built with HTML, CSS &amp; JavaScript</p>
                         </div>
                     </div>
                 </a>
                 <a href="Individual Project/home_page.html">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="images/real_estate.avif" alt="Web Design Image">
+                            <img src="images/real_estate.avif" alt="Real Estate Portal">
                         </div>
-
+                        <div class="card-overlay">
+                            <h4>Real Estate Portal</h4>
+                            <p>Property listings site with search and filtering</p>
+                        </div>
                     </div>
                 </a>
                 <a href="AmazonEcho/Assignment-3.html">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="images/echoDot.jpg" alt="Web Design Image">
+                            <img src="images/echoDot.jpg" alt="Amazon Echo Landing Page">
                         </div>
-
+                        <div class="card-overlay">
+                            <h4>Amazon Echo Landing Page</h4>
+                            <p>Product showcase page for the Amazon Echo Dot</p>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -509,26 +245,35 @@
                 <a href="TTC_hackathon.pdf">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="images/ttc.png" alt="Web Design Image">
+                            <img src="images/ttc.png" alt="TTC Hackathon">
                         </div>
-
+                        <div class="card-overlay">
+                            <h4>TTC Hackathon</h4>
+                            <p>Transit data analysis for Toronto's public transit system</p>
+                        </div>
                     </div>
                 </a>
                 <a href="Unit Conversations/index.html">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="images/UC.jpg" alt="Web Design Image">
+                            <img src="images/UC.jpg" alt="Unit Converter">
                         </div>
-
+                        <div class="card-overlay">
+                            <h4>Unit Converter</h4>
+                            <p>Conversational unit conversion web application</p>
+                        </div>
                     </div>
                 </a>
 
                 <a href="SpamEmails.pdf">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="images/spam.jpeg" alt="Web Design Image">
+                            <img src="images/spam.jpeg" alt="Spam Email Detector">
                         </div>
-
+                        <div class="card-overlay">
+                            <h4>Spam Email Detector</h4>
+                            <p>NLP-based classifier to detect and filter spam emails</p>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -536,7 +281,11 @@
                 <a href="AiTutor.pdf" target="_blank">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="images/tutor.jpg" alt="Multi Agentic Tutoring System">
+                            <img src="images/tutor.jpg" alt="Luminate AI Tutor">
+                        </div>
+                        <div class="card-overlay">
+                            <h4>Luminate AI Tutor</h4>
+                            <p>Multi-agent tutoring system using LangGraph &amp; Google Gemini</p>
                         </div>
                     </div>
                 </a>
@@ -544,7 +293,11 @@
                 <a href="AWS_SentimentAnalysis.pdf" target="_blank">
                     <div class="my-card port-card">
                         <div class="image">
-                            <img src="images/Sentiment.jpg" alt="AWS Voice Sentiment Analysis">
+                            <img src="images/Sentiment.jpg" alt="AWS Sentiment Analysis">
+                        </div>
+                        <div class="card-overlay">
+                            <h4>AWS Sentiment Analysis</h4>
+                            <p>Voice sentiment analysis pipeline built on AWS cloud services</p>
                         </div>
                     </div>
                 </a>
@@ -554,6 +307,10 @@
                         <div class="image">
                             <img src="images/sea.jpg" alt="Marine Species Classifier">
                         </div>
+                        <div class="card-overlay">
+                            <h4>Marine Species Classifier</h4>
+                            <p>Deep learning ResNet50 model achieving 91.82% accuracy</p>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -562,47 +319,42 @@
     <br>
     <br>
 
-    <!-- Contact me section -->
-    <!-- <section class="contact" id="contact">
-        <div class="contact-heading">
-            <h1 class="my-heading text-center">Contact Me</h1>
-        </div>
-        <br>
-        <br> -->
-    <!-- <div class="contact-content">
-            <div class="contact-form-container">
-                <h1 class="greet-heading">Get In Touch</h1>
-                <form class="contact-form">
-                    <input class="form-controls" type="text" placeholder="Your Name">
-                    <input class="form-controls" type="text" placeholder="Your Email">
-                    <input class="form-controls" type="text" placeholder="Your Phone">
-                    <textarea class="form-controls" placeholder="Write your message" name="message" id="" cols="30"
-                        rows="10">
-					</textarea>
+    <!-- Contact Section -->
+    <!-- Replace YOUR_FORM_ID below with your actual Formspree form ID from https://formspree.io -->
+    <section class="contact" id="contact">
+        <h1 class="my-heading text-center">Get In Touch</h1>
+        <p class="skills-subheading">Have a project in mind or want to connect? I'd love to hear from you.</p>
+        <div class="contact-inner">
+            <div class="contact-form-col">
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+                    <input class="form-controls" type="text" name="name" placeholder="Your Name" required>
+                    <input class="form-controls" type="email" name="email" placeholder="Your Email" required>
+                    <input class="form-controls" type="text" name="subject" placeholder="Subject">
+                    <textarea class="form-controls" name="message" placeholder="Your message…" rows="5" required></textarea>
                     <input class="form-btn btn common-btn" type="submit" value="Send Message">
+                    <p class="form-success" id="form-success">✅ Thanks! Your message has been sent.</p>
                 </form>
-            </div> -->
-    <!-- <div class="contact">
-                <div class="contact-details">
-                    <h1 class="greet-heading">My Contact Details</h1>
-                    <div class="details">
-                         <h5 class="contact-heading">EMAIL</h5> 
-                        <p class="contact-text"><i class="fas fa-envelope"></i><a href="mailto:yajushigarg@gmail.com">yajushigarg@gmail.com</a></p>
-                    </div>
-                    <div class="details">
-                        <h5 class="contact-heading">PHONE</h5> 
-                        <p class="contact-text"><i class="fas fa-phone"></i>437-983-6235</p>
-                    </div>
-                    <div class="details">
-                        <h5 class="contact-heading">ADDRESS</h5> 
-                        <p class="contact-text"><i class="fas fa-map-marker-alt"></i>Toronto, ON</p>
-                        <p>Scarborough</p>
-                        <p>24 Vanwar Drive, M1G 1G7</p>
-                    </div>
+            </div>
+            <div class="contact-info-col">
+                <a class="contact-info-item" href="mailto:yajushigarg@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    <span>yajushigarg@gmail.com</span>
+                </a>
+                <a class="contact-info-item" href="https://www.linkedin.com/in/yajushigarg1207/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>linkedin.com/in/yajushigarg1207</span>
+                </a>
+                <a class="contact-info-item" href="https://github.com/yajushi200" target="_blank">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/yajushi200</span>
+                </a>
+                <div class="contact-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Toronto, ON, Canada</span>
                 </div>
             </div>
-            
-    </section> -->
+        </div>
+    </section>
 
     <!-- Footer section -->
     <footer class="footer">
@@ -673,6 +425,193 @@
                 el.style.opacity = 1;
             }, 500);
         }, 2500);
+
+        // Lottie skeleton
+        const lottiePlayer = document.getElementById('lottie-player');
+        const lottieSkel  = document.getElementById('lottie-skeleton');
+        if (lottiePlayer && lottieSkel) {
+            lottiePlayer.addEventListener('ready', () => lottieSkel.classList.add('hidden'));
+            setTimeout(() => lottieSkel && lottieSkel.classList.add('hidden'), 3000);
+        }
+
+        // Contact form AJAX (Formspree)
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = new FormData(contactForm);
+                const res  = await fetch(contactForm.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+                const successMsg = document.getElementById('form-success');
+                if (res.ok) {
+                    contactForm.reset();
+                    successMsg.style.display = 'block';
+                    setTimeout(() => successMsg.style.display = 'none', 5000);
+                }
+            });
+        }
+    </script>
+
+    <script>
+        // ============================================================
+        // SKILLS DATA — edit descriptions / levels / projects here
+        // ============================================================
+        const skillsData = [
+            // Data Analytics
+            { icon:"🐍",  devicon:"devicon-python-plain colored",          name:"Python",         category:"data",  level:"Expert",       proficiency:90, description:"Core language across data, ML, and AI work. Used in ETL pipelines, AWS workflows, and multi-agent AI systems.", projects:["luminate","marine","sentiment","spam"] },
+            { icon:"🗄️",  devicon:null,                                    name:"SQL",            category:"data",  level:"Expert",       proficiency:88, description:"Advanced querying, stored procedures, and data warehouse operations in Redshift, PostgreSQL, and Oracle.", projects:["sentiment"] },
+            { icon:"📊",  devicon:null,                                    name:"Power BI",       category:"data",  level:"Advanced",     proficiency:82, description:"Built interactive BI dashboards at Scriptics Technologies to surface real-time business insights.", projects:[] },
+            { icon:"📈",  devicon:null,                                    name:"Excel",          category:"data",  level:"Advanced",     proficiency:80, description:"Advanced formulas, pivot tables, VLOOKUP, and data modeling for business analysis.", projects:[] },
+            { icon:"🔍",  devicon:null,                                    name:"Tableau",        category:"data",  level:"Advanced",     proficiency:78, description:"Visual analytics dashboards for storytelling from complex datasets.", projects:[] },
+            { icon:"🐼",  devicon:"devicon-pandas-plain colored",          name:"Pandas",         category:"data",  level:"Expert",       proficiency:88, description:"Primary library for data wrangling, cleaning, and exploratory analysis across all projects.", projects:["marine","sentiment","spam"] },
+            { icon:"🔢",  devicon:"devicon-numpy-plain colored",           name:"NumPy",          category:"data",  level:"Expert",       proficiency:85, description:"Numerical computation and array operations in data preprocessing and ML pipelines.", projects:["marine"] },
+            { icon:"📉",  devicon:"devicon-matplotlib-plain colored",      name:"Matplotlib",     category:"data",  level:"Advanced",     proficiency:80, description:"Data visualization for model evaluation, confusion matrices, and EDA plots.", projects:["marine","spam"] },
+            { icon:"🎨",  devicon:null,                                    name:"Seaborn",        category:"data",  level:"Advanced",     proficiency:78, description:"Statistical visualization for correlation heatmaps and distribution analysis.", projects:[] },
+            { icon:"⚡",  devicon:"devicon-apachespark-original colored",  name:"PySpark",        category:"data",  level:"Advanced",     proficiency:78, description:"Distributed data processing for large-scale ETL and analytics workloads.", projects:[] },
+            // Cloud
+            { icon:"☁️",  devicon:null,                                    name:"AWS Glue",       category:"cloud", level:"Advanced",     proficiency:82, description:"Built serverless ETL pipelines to extract, transform, and load data between S3 and Redshift.", projects:["sentiment"] },
+            { icon:"🪣",  devicon:null,                                    name:"AWS S3",         category:"cloud", level:"Advanced",     proficiency:85, description:"Object storage backbone for data lakes, model artifacts, and serverless workflows.", projects:["sentiment"] },
+            { icon:"🏢",  devicon:null,                                    name:"AWS Redshift",   category:"cloud", level:"Advanced",     proficiency:80, description:"Cloud data warehouse for complex analytics queries on large structured datasets.", projects:["sentiment"] },
+            { icon:"🔷",  devicon:"devicon-azure-plain colored",           name:"Azure",          category:"cloud", level:"Intermediate", proficiency:65, description:"Provisioned cloud resources and explored Azure Cognitive Services for AI projects.", projects:[] },
+            { icon:"🌐",  devicon:"devicon-googlecloud-plain colored",     name:"Google Cloud",   category:"cloud", level:"Intermediate", proficiency:65, description:"Used Vertex AI and the Gemini API as the LLM backbone for the Luminate AI tutoring system.", projects:["luminate"] },
+            { icon:"🧱",  devicon:null,                                    name:"Databricks",     category:"cloud", level:"Intermediate", proficiency:68, description:"Collaborative analytics and ML experimentation on the Databricks Lakehouse platform.", projects:[] },
+            { icon:"⚙️",  devicon:null,                                    name:"AWS Lambda",     category:"cloud", level:"Advanced",     proficiency:78, description:"Serverless compute for event-driven data processing and API integrations.", projects:["sentiment"] },
+            { icon:"🔐",  devicon:null,                                    name:"AWS IAM",        category:"cloud", level:"Intermediate", proficiency:68, description:"Identity and access management for secure, role-based AWS infrastructure policies.", projects:[] },
+            { icon:"🌊",  devicon:"devicon-apachespark-original colored",  name:"Apache Spark",   category:"cloud", level:"Advanced",     proficiency:78, description:"Distributed big data processing framework for scalable ETL and ML workflows.", projects:[] },
+            // AI / ML
+            { icon:"🤖",  devicon:null,                                    name:"Machine Learning", category:"ai", level:"Expert",       proficiency:88, description:"Supervised and unsupervised models — classification, regression, clustering — applied to real-world datasets.", projects:["marine","spam","sentiment"] },
+            { icon:"💬",  devicon:null,                                    name:"NLP",            category:"ai",    level:"Advanced",     proficiency:85, description:"Text preprocessing, embeddings, and sentiment pipelines for language understanding tasks.", projects:["sentiment","luminate"] },
+            { icon:"🧠",  devicon:null,                                    name:"Neural Networks",category:"ai",    level:"Advanced",     proficiency:82, description:"CNNs and transfer learning architectures. Achieved 91.82% accuracy on marine species classification.", projects:["marine"] },
+            { icon:"🔗",  devicon:null,                                    name:"LangChain",      category:"ai",    level:"Advanced",     proficiency:82, description:"Built RAG pipelines, memory-enabled chains, and tool-using agents for conversational AI.", projects:["luminate"] },
+            { icon:"🕸️",  devicon:null,                                    name:"LangGraph",      category:"ai",    level:"Advanced",     proficiency:78, description:"Designed stateful multi-agent orchestration graphs for the Luminate AI tutoring system.", projects:["luminate"] },
+            { icon:"🗃️",  devicon:null,                                    name:"ChromaDB",       category:"ai",    level:"Advanced",     proficiency:78, description:"Vector store for semantic document retrieval in RAG-based AI knowledge systems.", projects:["luminate"] },
+            { icon:"🧬",  devicon:"devicon-tensorflow-original colored",   name:"TensorFlow",     category:"ai",    level:"Advanced",     proficiency:82, description:"Deep learning model training and deployment for image classification tasks.", projects:["marine"] },
+            { icon:"🔬",  devicon:"devicon-keras-plain colored",           name:"Keras",          category:"ai",    level:"Advanced",     proficiency:80, description:"High-level neural network API for rapid prototyping and transfer learning experiments.", projects:["marine"] },
+            { icon:"📐",  devicon:"devicon-scikitlearn-plain colored",     name:"Scikit-Learn",   category:"ai",    level:"Expert",       proficiency:88, description:"Go-to library for classical ML — feature engineering, model selection, and evaluation.", projects:["spam","marine","sentiment"] },
+            { icon:"🔥",  devicon:"devicon-pytorch-original colored",      name:"PyTorch",        category:"ai",    level:"Advanced",     proficiency:78, description:"Dynamic computation graphs and research-oriented deep learning model training.", projects:[] },
+            { icon:"🗣️",  devicon:null,                                    name:"NLTK",           category:"ai",    level:"Advanced",     proficiency:80, description:"NLP toolkit for tokenization, stemming, POS tagging, and corpus analysis.", projects:["sentiment"] },
+            { icon:"🕷️",  devicon:null,                                    name:"SpaCy",          category:"ai",    level:"Advanced",     proficiency:78, description:"Industrial-strength NLP for named entity recognition and dependency parsing.", projects:[] },
+            // Development
+            { icon:"🌐",  devicon:"devicon-html5-plain colored",           name:"HTML & CSS",     category:"dev",   level:"Advanced",     proficiency:82, description:"Built responsive web applications and portfolio sites with modern CSS layouts and animations.", projects:["blackjack"] },
+            { icon:"⚡",  devicon:"devicon-javascript-plain colored",      name:"JavaScript",     category:"dev",   level:"Advanced",     proficiency:78, description:"Frontend scripting for interactive UIs, DOM manipulation, and async API calls.", projects:["blackjack"] },
+            { icon:"⚛️",  devicon:"devicon-react-original colored",        name:"React",          category:"dev",   level:"Intermediate", proficiency:70, description:"Component-based UI development with hooks and state management for dynamic apps.", projects:[] },
+            { icon:"🟢",  devicon:"devicon-nodejs-plain colored",          name:"Node.js",        category:"dev",   level:"Intermediate", proficiency:68, description:"Backend server development and REST API creation with Express.js.", projects:[] },
+            { icon:"🔷",  devicon:"devicon-csharp-plain colored",          name:"C#",             category:"dev",   level:"Intermediate", proficiency:65, description:"Object-oriented development with the .NET framework for desktop applications.", projects:[] },
+            { icon:"🍃",  devicon:"devicon-mongodb-plain colored",         name:"MongoDB",        category:"dev",   level:"Intermediate", proficiency:65, description:"NoSQL document store for flexible schema design in full-stack applications.", projects:[] },
+            { icon:"📘",  devicon:"devicon-typescript-plain colored",      name:"TypeScript",     category:"dev",   level:"Intermediate", proficiency:68, description:"Strongly typed JavaScript for scalable and maintainable frontend codebases.", projects:[] },
+            { icon:"🗂️",  devicon:null,                                    name:"PL/SQL",         category:"dev",   level:"Intermediate", proficiency:68, description:"Stored procedures, triggers, and database logic in Oracle environments.", projects:[] },
+            { icon:"🐬",  devicon:"devicon-mysql-plain colored",           name:"MySQL",          category:"dev",   level:"Advanced",     proficiency:78, description:"Relational database design, complex joins, indexing, and query optimization.", projects:[] },
+            { icon:"🔶",  devicon:"devicon-oracle-original colored",       name:"Oracle DB",      category:"dev",   level:"Intermediate", proficiency:65, description:"Enterprise relational database management and PL/SQL programming.", projects:[] },
+            { icon:"⚡",  devicon:null,                                    name:"DynamoDB",       category:"dev",   level:"Intermediate", proficiency:68, description:"AWS NoSQL key-value store for serverless, low-latency application backends.", projects:["sentiment"] },
+            // Tools
+            { icon:"🐙",  devicon:"devicon-github-original colored",       name:"Git & GitHub",   category:"tools", level:"Expert",       proficiency:90, description:"Version control, branching strategies, pull requests, and collaborative dev workflows.", projects:[] },
+            { icon:"📋",  devicon:"devicon-jira-plain colored",            name:"Jira",           category:"tools", level:"Advanced",     proficiency:78, description:"Agile project management, sprint planning, and backlog grooming in professional settings.", projects:[] },
+            { icon:"🔧",  devicon:null,                                    name:"ETL Pipelines",  category:"tools", level:"Expert",       proficiency:85, description:"End-to-end pipeline design using AWS Glue, Python, and Spark for large-scale data movement.", projects:["sentiment"] },
+            { icon:"📐",  devicon:null,                                    name:"Visio",          category:"tools", level:"Intermediate", proficiency:65, description:"Process flow, system architecture, and ER diagrams for technical documentation.", projects:[] },
+            { icon:"💻",  devicon:"devicon-vscode-plain colored",          name:"VS Code",        category:"tools", level:"Expert",       proficiency:92, description:"Primary IDE with custom extensions, debugging, and remote development workflows.", projects:[] },
+            { icon:"🐳",  devicon:"devicon-docker-plain colored",          name:"Docker",         category:"tools", level:"Intermediate", proficiency:70, description:"Containerization for reproducible development environments and deployments.", projects:[] },
+            { icon:"⚡",  devicon:null,                                    name:"Power Apps",     category:"tools", level:"Intermediate", proficiency:65, description:"Low-code application development on the Microsoft Power Platform.", projects:[] },
+        ];
+
+        const projectsMap = {
+            luminate:  { title:"Luminate AI Tutor",       href:"AiTutor.pdf" },
+            marine:    { title:"Marine Classifier",        href:"MarineSpecies.pdf" },
+            sentiment: { title:"AWS Sentiment Analysis",   href:"AWS_SentimentAnalysis.pdf" },
+            spam:      { title:"Spam Detector",            href:"SpamEmails.pdf" },
+            blackjack: { title:"BlackJack Game",           href:"https://black-jack-red.vercel.app/" },
+            ttc:       { title:"TTC Hackathon",            href:"TTC_hackathon.pdf" },
+        };
+
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        function renderSkillCards() {
+            const grid = document.getElementById('skills-grid');
+            const lower = currentSearch.toLowerCase();
+            grid.innerHTML = '';
+
+            const visible = skillsData.filter(s => {
+                if (currentFilter !== 'all' && s.category !== currentFilter) return false;
+                if (currentSearch && !s.name.toLowerCase().includes(lower)) return false;
+                return true;
+            });
+
+            if (visible.length === 0) {
+                grid.innerHTML = '<p class="no-skills-msg">No skills match your search.</p>';
+                return;
+            }
+
+            visible.forEach(skill => {
+                const levelClass = skill.level.toLowerCase();
+                const iconHTML = skill.devicon
+                    ? `<i class="${skill.devicon} skill-devicon"></i>`
+                    : `<div class="skill-icon">${skill.icon}</div>`;
+                const tagsHTML = skill.projects.length
+                    ? `<div class="skill-proj-tags">${skill.projects.map(p => {
+                          const proj = projectsMap[p];
+                          return `<a href="${proj.href}" class="skill-proj-tag" target="_blank" onclick="event.stopPropagation()">${proj.title}</a>`;
+                      }).join('')}</div>`
+                    : '';
+
+                const wrapper = document.createElement('div');
+                wrapper.className = 'skill-flip-wrapper';
+                wrapper.dataset.category = skill.category;
+                wrapper.innerHTML = `
+                    <div class="skill-flip-inner">
+                        <div class="skill-flip-front">
+                            ${iconHTML}
+                            <h3>${skill.name}</h3>
+                        </div>
+                        <div class="skill-flip-back">
+                            <span class="skill-level-badge ${levelClass}">${skill.level}</span>
+                            <p class="skill-back-desc">${skill.description}</p>
+                            <div class="skill-progress-container">
+                                <div class="skill-progress-bar">
+                                    <div class="skill-progress-fill" data-width="${skill.proficiency}" style="width:0%"></div>
+                                </div>
+                                <span class="skill-pct">${skill.proficiency}%</span>
+                            </div>
+                            ${tagsHTML}
+                        </div>
+                    </div>`;
+
+                // Tap to toggle flip on touch devices
+                wrapper.addEventListener('click', () => wrapper.classList.toggle('flipped'));
+                grid.appendChild(wrapper);
+            });
+
+            // Animate progress bars when they scroll into view
+            requestAnimationFrame(() => {
+                const fills = grid.querySelectorAll('.skill-progress-fill');
+                const io = new IntersectionObserver(entries => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            e.target.style.width = e.target.dataset.width + '%';
+                            io.unobserve(e.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                fills.forEach(f => io.observe(f));
+            });
+        }
+
+        function filterSkills(category, btn) {
+            currentFilter = category;
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderSkillCards();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderSkillCards();
+
+            const searchEl = document.getElementById('skill-search');
+            if (searchEl) {
+                searchEl.addEventListener('input', () => {
+                    currentSearch = searchEl.value;
+                    renderSkillCards();
+                });
+            }
+        });
     </script>
 </body>
 
