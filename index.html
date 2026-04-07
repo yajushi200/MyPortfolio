@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.7.1/dist/lottie-player.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -79,8 +79,7 @@
             </div>
             <div class="lottie-wrapper">
                 <div class="lottie-skeleton" id="lottie-skeleton"></div>
-                <lottie-player id="lottie-player" src="AI _bot.json" background="transparent" speed="1" loop autoplay>
-                </lottie-player>
+                <div id="lottie-container"></div>
                 <div class="robot-fallback" id="robot-fallback">🤖</div>
             </div>
         </div>
@@ -431,22 +430,36 @@
             }, 500);
         }, 2500);
 
-        // Lottie skeleton
-        const lottiePlayer = document.getElementById('lottie-player');
-        const lottieSkel  = document.getElementById('lottie-skeleton');
-        const robotFallback = document.getElementById('robot-fallback');
-        if (lottiePlayer && lottieSkel) {
-            lottiePlayer.addEventListener('ready', () => {
-                lottieSkel.classList.add('hidden');
+        // Lottie animation via lottie-web (bodymovin)
+        const lottieContainer = document.getElementById('lottie-container');
+        const lottieSkel      = document.getElementById('lottie-skeleton');
+        const robotFallback   = document.getElementById('robot-fallback');
+        if (lottieContainer && typeof lottie !== 'undefined') {
+            const anim = lottie.loadAnimation({
+                container: lottieContainer,
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'AI _bot.json'
+            });
+            anim.addEventListener('DOMLoaded', () => {
+                if (lottieSkel) lottieSkel.classList.add('hidden');
                 if (robotFallback) robotFallback.style.display = 'none';
             });
-            // Hide skeleton after 3s regardless; show fallback if lottie still has no shadow DOM after 4s
-            setTimeout(() => { if (lottieSkel) lottieSkel.classList.add('hidden'); }, 3000);
+            anim.addEventListener('error', () => {
+                if (lottieSkel) lottieSkel.classList.add('hidden');
+                if (robotFallback) robotFallback.style.display = 'flex';
+            });
+            // Fallback: if animation hasn't loaded after 4s, show emoji
             setTimeout(() => {
-                const shadowRoot = lottiePlayer.shadowRoot;
-                const hasContent = shadowRoot && shadowRoot.querySelector('svg');
-                if (!hasContent && robotFallback) robotFallback.style.display = 'flex';
+                if (lottieSkel) lottieSkel.classList.add('hidden');
+                if (lottieContainer && !lottieContainer.querySelector('svg') && robotFallback) {
+                    robotFallback.style.display = 'flex';
+                }
             }, 4000);
+        } else {
+            if (lottieSkel) lottieSkel.classList.add('hidden');
+            if (robotFallback) robotFallback.style.display = 'flex';
         }
 
         // Contact form AJAX (Formspree)

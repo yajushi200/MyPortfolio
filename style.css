@@ -566,9 +566,9 @@ body {
 }
 
 
-lottie-player {
-  width: 450px !important;
-  height: 500px !important;
+#lottie-container {
+  width: 450px;
+  height: 500px;
   margin: 0 auto;
 }
 
