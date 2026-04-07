@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@1.7.1/dist/lottie-player.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -81,6 +81,7 @@
                 <div class="lottie-skeleton" id="lottie-skeleton"></div>
                 <lottie-player id="lottie-player" src="AI _bot.json" background="transparent" speed="1" loop autoplay>
                 </lottie-player>
+                <div class="robot-fallback" id="robot-fallback">🤖</div>
             </div>
         </div>
     </section>
@@ -433,9 +434,19 @@
         // Lottie skeleton
         const lottiePlayer = document.getElementById('lottie-player');
         const lottieSkel  = document.getElementById('lottie-skeleton');
+        const robotFallback = document.getElementById('robot-fallback');
         if (lottiePlayer && lottieSkel) {
-            lottiePlayer.addEventListener('ready', () => lottieSkel.classList.add('hidden'));
-            setTimeout(() => lottieSkel && lottieSkel.classList.add('hidden'), 3000);
+            lottiePlayer.addEventListener('ready', () => {
+                lottieSkel.classList.add('hidden');
+                if (robotFallback) robotFallback.style.display = 'none';
+            });
+            // Hide skeleton after 3s regardless; show fallback if lottie still has no shadow DOM after 4s
+            setTimeout(() => { if (lottieSkel) lottieSkel.classList.add('hidden'); }, 3000);
+            setTimeout(() => {
+                const shadowRoot = lottiePlayer.shadowRoot;
+                const hasContent = shadowRoot && shadowRoot.querySelector('svg');
+                if (!hasContent && robotFallback) robotFallback.style.display = 'flex';
+            }, 4000);
         }
 
         // Contact form AJAX (Formspree)

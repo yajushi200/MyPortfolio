@@ -914,7 +914,23 @@ lottie-player {
     transition: opacity 0.5s ease;
 }
 
-.lottie-skeleton.hidden { opacity: 0; }
+.lottie-skeleton.hidden { opacity: 0; pointer-events: none; }
+
+.robot-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 12rem;
+  animation: robotBounce 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes robotBounce {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%       { transform: translateY(-15px) rotate(3deg); }
+}
 
 @keyframes shimmer {
     0%   { background-position: 200% 0; }
