@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style2.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -78,9 +78,58 @@
                 <span class="bubble-arrow"></span>
             </div>
             <div class="lottie-wrapper">
-                <div class="lottie-skeleton" id="lottie-skeleton"></div>
-                <div id="lottie-container"></div>
-                <div class="robot-fallback" id="robot-fallback">🤖</div>
+                <svg id="robot-svg" viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg" aria-label="Waving AI Robot">
+                    <defs>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                            <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                        </filter>
+                    </defs>
+                    <!-- Antenna -->
+                    <line x1="110" y1="8" x2="110" y2="30" stroke="#35A99C" stroke-width="3" stroke-linecap="round"/>
+                    <circle cx="110" cy="6" r="7" fill="#35A99C" filter="url(#glow)"/>
+                    <circle cx="110" cy="6" r="3" fill="#fff" opacity="0.9"/>
+                    <!-- Head -->
+                    <rect x="72" y="28" width="76" height="65" rx="14" fill="#1a2744" stroke="#35A99C" stroke-width="2.5"/>
+                    <!-- Eyes -->
+                    <circle cx="95" cy="53" r="11" fill="#0d1a2d"/>
+                    <circle cx="125" cy="53" r="11" fill="#0d1a2d"/>
+                    <circle cx="95" cy="53" r="7.5" fill="#35A99C" filter="url(#glow)"/>
+                    <circle cx="125" cy="53" r="7.5" fill="#35A99C" filter="url(#glow)"/>
+                    <circle cx="91.5" cy="49.5" r="2.5" fill="white" opacity="0.9"/>
+                    <circle cx="121.5" cy="49.5" r="2.5" fill="white" opacity="0.9"/>
+                    <!-- Smile -->
+                    <path d="M 92 73 Q 110 85 128 73" stroke="#35A99C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <!-- Neck -->
+                    <rect x="103" y="93" width="14" height="14" rx="3" fill="#35A99C"/>
+                    <!-- Body -->
+                    <rect x="58" y="107" width="104" height="88" rx="14" fill="#1a2744" stroke="#35A99C" stroke-width="2.5"/>
+                    <!-- Chest panel -->
+                    <rect x="78" y="120" width="64" height="46" rx="8" fill="#0d1320" stroke="#35A99C" stroke-width="1.5"/>
+                    <!-- AI indicator lights -->
+                    <circle cx="93" cy="135" r="6" fill="#35A99C" filter="url(#glow)"/>
+                    <circle cx="110" cy="135" r="6" fill="#4ecdc4" opacity="0.7"/>
+                    <circle cx="127" cy="135" r="6" fill="#35A99C" filter="url(#glow)"/>
+                    <!-- Signal bars -->
+                    <rect x="85" y="148" width="50" height="4" rx="2" fill="#35A99C" opacity="0.25"/>
+                    <rect x="85" y="148" width="35" height="4" rx="2" fill="#35A99C"/>
+                    <rect x="85" y="156" width="50" height="4" rx="2" fill="#35A99C" opacity="0.25"/>
+                    <rect x="85" y="156" width="20" height="4" rx="2" fill="#35A99C" opacity="0.7"/>
+                    <!-- Left arm (static) -->
+                    <rect x="36" y="112" width="20" height="52" rx="10" fill="#1a2744" stroke="#35A99C" stroke-width="2"/>
+                    <circle cx="46" cy="167" r="9" fill="#35A99C"/>
+                    <!-- Right waving arm -->
+                    <g id="wave-arm">
+                        <rect x="164" y="112" width="20" height="52" rx="10" fill="#1a2744" stroke="#35A99C" stroke-width="2"/>
+                        <circle cx="174" cy="167" r="9" fill="#35A99C" filter="url(#glow)"/>
+                    </g>
+                    <!-- Legs -->
+                    <rect x="80" y="193" width="24" height="54" rx="10" fill="#1a2744" stroke="#35A99C" stroke-width="2"/>
+                    <rect x="116" y="193" width="24" height="54" rx="10" fill="#1a2744" stroke="#35A99C" stroke-width="2"/>
+                    <!-- Feet -->
+                    <rect x="72" y="240" width="34" height="14" rx="7" fill="#35A99C"/>
+                    <rect x="114" y="240" width="34" height="14" rx="7" fill="#35A99C"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -430,37 +479,6 @@
             }, 500);
         }, 2500);
 
-        // Lottie animation via lottie-web (bodymovin)
-        const lottieContainer = document.getElementById('lottie-container');
-        const lottieSkel      = document.getElementById('lottie-skeleton');
-        const robotFallback   = document.getElementById('robot-fallback');
-        if (lottieContainer && typeof lottie !== 'undefined') {
-            const anim = lottie.loadAnimation({
-                container: lottieContainer,
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: 'AI _bot.json'
-            });
-            anim.addEventListener('DOMLoaded', () => {
-                if (lottieSkel) lottieSkel.classList.add('hidden');
-                if (robotFallback) robotFallback.style.display = 'none';
-            });
-            anim.addEventListener('error', () => {
-                if (lottieSkel) lottieSkel.classList.add('hidden');
-                if (robotFallback) robotFallback.style.display = 'flex';
-            });
-            // Fallback: if animation hasn't loaded after 4s, show emoji
-            setTimeout(() => {
-                if (lottieSkel) lottieSkel.classList.add('hidden');
-                if (lottieContainer && !lottieContainer.querySelector('svg') && robotFallback) {
-                    robotFallback.style.display = 'flex';
-                }
-            }, 4000);
-        } else {
-            if (lottieSkel) lottieSkel.classList.add('hidden');
-            if (robotFallback) robotFallback.style.display = 'flex';
-        }
 
         // Contact form AJAX (Formspree)
         const contactForm = document.getElementById('contact-form');
