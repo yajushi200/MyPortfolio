@@ -174,24 +174,28 @@
             <h1 class="my-heading">About <span style="color:#35A99C">Me</span></h1>
             <p class="about-desc">
                 Honours graduate from <span class="highlight">Centennial College</span> with an Advanced Diploma in
-                Software Engineering Technology specializing in Artificial Intelligence,
+                Software Engineering Technology specialising in Artificial Intelligence,
                 graduating with a <span class="highlight">GPA of 4.299 out of 4.5.</span>
+                I am a results-driven <span class="highlight">AI Engineer &amp; Data Analyst</span> passionate about
+                turning complex data into actionable intelligence.
             </p>
 
             <p class="about-desc">
-                <span class="highlight">Data Analyst Intern</span> at Scriptics Technologies — built ETL pipelines,
-                Power BI dashboards, and AWS workflows using Glue, S3 and Redshift.
-                Also worked as a <span class="highlight">Software Lab Assistant</span> at Centennial College
-                supporting students with technical tools and coursework.
-                Previously served as an <span class="highlight">IT Technologist Intern</span> handling
-                system support and infrastructure tasks.
+                As a <span class="highlight">Data Analyst Intern</span> at Scriptics Technologies, I designed and
+                deployed end-to-end ETL pipelines, Power BI dashboards, and AWS cloud workflows using Glue, S3,
+                and Redshift. I also contributed as a <span class="highlight">Software Lab Assistant</span> at
+                Centennial College and previously gained industry exposure as an
+                <span class="highlight">IT Technologist Intern</span> handling system support and infrastructure.
             </p>
 
             <p class="about-desc">
-                Built <span class="highlight">Luminate AI</span> — a multi-agent tutoring system using LangGraph,
-                LangChain, ChromaDB and Google Gemini. Developed a
-                <span class="highlight">Marine Species Classifier</span> with 91.82% accuracy using ResNet50,
-                and an <span class="highlight">Amazon Reviews Sentiment Analysis</span> system using NLP pipelines.
+                My portfolio spans AI, ML, and cloud engineering — including
+                <a href="#portfolio" class="highlight"><strong>Luminate AI</strong></a>, a multi-agent tutoring
+                system built with LangGraph, LangChain, ChromaDB, and Google Gemini;
+                a <a href="#portfolio" class="highlight"><strong>Marine Species Classifier</strong></a> achieving
+                91.82% accuracy using ResNet50 transfer learning; and an
+                <a href="#portfolio" class="highlight"><strong>Amazon Reviews Sentiment Analysis</strong></a>
+                pipeline powered by NLP and AWS cloud services.
             </p>
             <div class="about-stats">
                 <div class="stat-box">
@@ -199,7 +203,7 @@
                     <p>GPA out of 4.5</p>
                 </div>
                 <div class="stat-box">
-                    <h2>3+</h2>
+                    <h2>5+</h2>
                     <p>Certifications</p>
                 </div>
                 <div class="stat-box">
@@ -248,6 +252,22 @@
                     <h4>Advanced Diploma — Software Engineering (AI)</h4>
                     <p>Centennial College · GPA 4.299 / 4.5</p>
                     <span class="cert-badge">AI Specialisation</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">🔷</div>
+                <div class="cert-info">
+                    <h4>Microsoft Azure Fundamentals (AZ-900)</h4>
+                    <p>Microsoft</p>
+                    <span class="cert-badge">Cloud</span>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon">🧱</div>
+                <div class="cert-info">
+                    <h4>Databricks Lakehouse Fundamentals</h4>
+                    <p>Databricks</p>
+                    <span class="cert-badge">Data Platform</span>
                 </div>
             </div>
         </div>
@@ -513,39 +533,39 @@
         // ============================================================
         const skillsData = [
             // Data Analytics
-            { icon:"🐍",  devicon:"devicon-python-plain colored",          name:"Python",         category:"data",  level:"Expert",       proficiency:90, description:"Core language across data, ML, and AI work. Used in ETL pipelines, AWS workflows, and multi-agent AI systems.", projects:["luminate","marine","sentiment","spam"] },
-            { icon:"🗄️",  devicon:null,                                    name:"SQL",            category:"data",  level:"Expert",       proficiency:88, description:"Advanced querying, stored procedures, and data warehouse operations in Redshift, PostgreSQL, and Oracle.", projects:["sentiment"] },
-            { icon:"📊",  devicon:null,                                    name:"Power BI",       category:"data",  level:"Advanced",     proficiency:82, description:"Built interactive BI dashboards at Scriptics Technologies to surface real-time business insights.", projects:[] },
+            { icon:"🐍",  devicon:"devicon-python-plain colored",          name:"Python",         category:"data",  level:"Advanced",     proficiency:85, description:"Core language across data, ML, and AI work. Used in ETL pipelines, AWS workflows, and multi-agent AI systems.", projects:["luminate","marine","sentiment","spam"] },
+            { icon:"🗄️",  devicon:null,                                    name:"SQL",            category:"data",  level:"Advanced",     proficiency:85, description:"Advanced querying, stored procedures, and data warehouse operations — optimised for data analysis roles in Redshift, PostgreSQL, and Oracle.", projects:["sentiment"] },
+            { icon:"📊",  devicon:null,                                    name:"Power BI",       category:"data",  level:"Advanced",     proficiency:80, description:"Built interactive BI dashboards at Scriptics Technologies to surface real-time business insights.", projects:[] },
             { icon:"📈",  devicon:null,                                    name:"Excel",          category:"data",  level:"Advanced",     proficiency:80, description:"Advanced formulas, pivot tables, VLOOKUP, and data modeling for business analysis.", projects:[] },
             { icon:"🔍",  devicon:null,                                    name:"Tableau",        category:"data",  level:"Advanced",     proficiency:78, description:"Visual analytics dashboards for storytelling from complex datasets.", projects:[] },
             { icon:"🐼",  devicon:"devicon-pandas-plain colored",          name:"Pandas",         category:"data",  level:"Expert",       proficiency:88, description:"Primary library for data wrangling, cleaning, and exploratory analysis across all projects.", projects:["marine","sentiment","spam"] },
             { icon:"🔢",  devicon:"devicon-numpy-plain colored",           name:"NumPy",          category:"data",  level:"Expert",       proficiency:85, description:"Numerical computation and array operations in data preprocessing and ML pipelines.", projects:["marine"] },
             { icon:"📉",  devicon:"devicon-matplotlib-plain colored",      name:"Matplotlib",     category:"data",  level:"Advanced",     proficiency:80, description:"Data visualization for model evaluation, confusion matrices, and EDA plots.", projects:["marine","spam"] },
             { icon:"🎨",  devicon:null,                                    name:"Seaborn",        category:"data",  level:"Advanced",     proficiency:78, description:"Statistical visualization for correlation heatmaps and distribution analysis.", projects:[] },
-            { icon:"⚡",  devicon:"devicon-apachespark-original colored",  name:"PySpark",        category:"data",  level:"Advanced",     proficiency:78, description:"Distributed data processing for large-scale ETL and analytics workloads.", projects:[] },
+            { icon:"⚡",  devicon:"devicon-apachespark-original colored",  name:"PySpark",        category:"data",  level:"Intermediate", proficiency:60, description:"Foundational knowledge of distributed data processing using PySpark for large-scale ETL and analytics workloads.", projects:[] },
             // Cloud
-            { icon:"☁️",  devicon:null,                                    name:"AWS Glue",       category:"cloud", level:"Advanced",     proficiency:82, description:"Built serverless ETL pipelines to extract, transform, and load data between S3 and Redshift.", projects:["sentiment"] },
-            { icon:"🪣",  devicon:null,                                    name:"AWS S3",         category:"cloud", level:"Advanced",     proficiency:85, description:"Object storage backbone for data lakes, model artifacts, and serverless workflows.", projects:["sentiment"] },
-            { icon:"🏢",  devicon:null,                                    name:"AWS Redshift",   category:"cloud", level:"Advanced",     proficiency:80, description:"Cloud data warehouse for complex analytics queries on large structured datasets.", projects:["sentiment"] },
-            { icon:"🔷",  devicon:"devicon-azure-plain colored",           name:"Azure",          category:"cloud", level:"Intermediate", proficiency:65, description:"Provisioned cloud resources and explored Azure Cognitive Services for AI projects.", projects:[] },
-            { icon:"🌐",  devicon:"devicon-googlecloud-plain colored",     name:"Google Cloud",   category:"cloud", level:"Intermediate", proficiency:65, description:"Used Vertex AI and the Gemini API as the LLM backbone for the Luminate AI tutoring system.", projects:["luminate"] },
-            { icon:"🧱",  devicon:null,                                    name:"Databricks",     category:"cloud", level:"Intermediate", proficiency:68, description:"Collaborative analytics and ML experimentation on the Databricks Lakehouse platform.", projects:[] },
-            { icon:"⚙️",  devicon:null,                                    name:"AWS Lambda",     category:"cloud", level:"Advanced",     proficiency:78, description:"Serverless compute for event-driven data processing and API integrations.", projects:["sentiment"] },
+            { icon:"☁️",  devicon:null,                                    name:"AWS Glue",       category:"cloud", level:"Intermediate", proficiency:75, description:"Foundational knowledge of serverless ETL pipelines to extract, transform, and load data between S3 and Redshift. Supported by AWS Certified Cloud Practitioner.", projects:["sentiment"] },
+            { icon:"🪣",  devicon:null,                                    name:"AWS S3",         category:"cloud", level:"Intermediate", proficiency:85, description:"Primary object storage backbone for data lakes, model artifacts, and serverless workflows. Supported by AWS Certified Cloud Practitioner.", projects:["sentiment"] },
+            { icon:"🏢",  devicon:null,                                    name:"AWS Redshift",   category:"cloud", level:"Intermediate", proficiency:75, description:"Foundational knowledge of cloud data warehousing for complex analytics queries on large structured datasets. Supported by AWS Certified Cloud Practitioner.", projects:["sentiment"] },
+            { icon:"🔷",  devicon:"devicon-azure-plain colored",           name:"Azure",          category:"cloud", level:"Intermediate", proficiency:65, description:"Provisioned cloud resources and explored Azure Cognitive Services for AI projects. Studying toward Microsoft Azure Fundamentals (AZ-900) certification.", projects:[] },
+            { icon:"🌐",  devicon:"devicon-googlecloud-plain colored",     name:"Google Cloud",   category:"cloud", level:"Intermediate", proficiency:65, description:"Used Vertex AI and the Gemini API as the LLM backbone for the Luminate AI tutoring system. Credential: Google Data Analytics Certificate (Coursera).", projects:["luminate"] },
+            { icon:"🧱",  devicon:null,                                    name:"Databricks",     category:"cloud", level:"Intermediate", proficiency:68, description:"Collaborative analytics and ML experimentation on the Databricks Lakehouse platform. Credential: Databricks Lakehouse Fundamentals.", projects:[] },
+            { icon:"⚙️",  devicon:null,                                    name:"AWS Lambda",     category:"cloud", level:"Intermediate", proficiency:75, description:"Foundational knowledge of serverless compute for event-driven data processing and API integrations. Supported by AWS Certified Cloud Practitioner.", projects:["sentiment"] },
             { icon:"🔐",  devicon:null,                                    name:"AWS IAM",        category:"cloud", level:"Intermediate", proficiency:68, description:"Identity and access management for secure, role-based AWS infrastructure policies.", projects:[] },
-            { icon:"🌊",  devicon:"devicon-apachespark-original colored",  name:"Apache Spark",   category:"cloud", level:"Advanced",     proficiency:78, description:"Distributed big data processing framework for scalable ETL and ML workflows.", projects:[] },
+            { icon:"🌊",  devicon:"devicon-apachespark-original colored",  name:"Apache Spark",   category:"cloud", level:"Intermediate", proficiency:70, description:"Intermediate knowledge of Apache Spark as a distributed Big Data processing framework for scalable ETL and ML workflows.", projects:[] },
             // AI / ML
             { icon:"🤖",  devicon:null,                                    name:"Machine Learning", category:"ai", level:"Expert",       proficiency:88, description:"Supervised and unsupervised models — classification, regression, clustering — applied to real-world datasets.", projects:["marine","spam","sentiment"] },
             { icon:"💬",  devicon:null,                                    name:"NLP",            category:"ai",    level:"Advanced",     proficiency:85, description:"Text preprocessing, embeddings, and sentiment pipelines for language understanding tasks.", projects:["sentiment","luminate"] },
             { icon:"🧠",  devicon:null,                                    name:"Neural Networks",category:"ai",    level:"Advanced",     proficiency:82, description:"CNNs and transfer learning architectures. Achieved 91.82% accuracy on marine species classification.", projects:["marine"] },
-            { icon:"🔗",  devicon:null,                                    name:"LangChain",      category:"ai",    level:"Advanced",     proficiency:82, description:"Built RAG pipelines, memory-enabled chains, and tool-using agents for conversational AI.", projects:["luminate"] },
-            { icon:"🕸️",  devicon:null,                                    name:"LangGraph",      category:"ai",    level:"Advanced",     proficiency:78, description:"Designed stateful multi-agent orchestration graphs for the Luminate AI tutoring system.", projects:["luminate"] },
-            { icon:"🗃️",  devicon:null,                                    name:"ChromaDB",       category:"ai",    level:"Advanced",     proficiency:78, description:"Vector store for semantic document retrieval in RAG-based AI knowledge systems.", projects:["luminate"] },
-            { icon:"🧬",  devicon:"devicon-tensorflow-original colored",   name:"TensorFlow",     category:"ai",    level:"Advanced",     proficiency:82, description:"Deep learning model training and deployment for image classification tasks.", projects:["marine"] },
-            { icon:"🔬",  devicon:"devicon-keras-plain colored",           name:"Keras",          category:"ai",    level:"Advanced",     proficiency:80, description:"High-level neural network API for rapid prototyping and transfer learning experiments.", projects:["marine"] },
-            { icon:"📐",  devicon:"devicon-scikitlearn-plain colored",     name:"Scikit-Learn",   category:"ai",    level:"Expert",       proficiency:88, description:"Go-to library for classical ML — feature engineering, model selection, and evaluation.", projects:["spam","marine","sentiment"] },
-            { icon:"🔥",  devicon:"devicon-pytorch-original colored",      name:"PyTorch",        category:"ai",    level:"Advanced",     proficiency:78, description:"Dynamic computation graphs and research-oriented deep learning model training.", projects:[] },
-            { icon:"🗣️",  devicon:null,                                    name:"NLTK",           category:"ai",    level:"Advanced",     proficiency:80, description:"NLP toolkit for tokenization, stemming, POS tagging, and corpus analysis.", projects:["sentiment"] },
-            { icon:"🕷️",  devicon:null,                                    name:"SpaCy",          category:"ai",    level:"Advanced",     proficiency:78, description:"Industrial-strength NLP for named entity recognition and dependency parsing.", projects:[] },
+            { icon:"🔗",  devicon:null,                                    name:"LangChain",      category:"ai",    level:"Intermediate", proficiency:70, description:"Built RAG pipelines, memory-enabled chains, and tool-using agents for conversational AI.", projects:["luminate"] },
+            { icon:"🕸️",  devicon:null,                                    name:"LangGraph",      category:"ai",    level:"Intermediate", proficiency:70, description:"Designed stateful multi-agent orchestration graphs for the Luminate AI tutoring system.", projects:["luminate"] },
+            { icon:"🗃️",  devicon:null,                                    name:"ChromaDB",       category:"ai",    level:"Intermediate", proficiency:70, description:"Vector store for semantic document retrieval in RAG-based AI knowledge systems.", projects:["luminate"] },
+            { icon:"🧬",  devicon:"devicon-tensorflow-original colored",   name:"TensorFlow",     category:"ai",    level:"Intermediate", proficiency:70, description:"Deep learning model training and deployment for image classification tasks.", projects:["marine"] },
+            { icon:"🔬",  devicon:"devicon-keras-plain colored",           name:"Keras",          category:"ai",    level:"Intermediate", proficiency:70, description:"High-level neural network API for rapid prototyping and transfer learning experiments.", projects:["marine"] },
+            { icon:"📐",  devicon:"devicon-scikitlearn-plain colored",     name:"Scikit-Learn",   category:"ai",    level:"Intermediate", proficiency:70, description:"Go-to library for classical ML — feature engineering, model selection, and evaluation.", projects:["spam","marine","sentiment"] },
+            { icon:"🔥",  devicon:"devicon-pytorch-original colored",      name:"PyTorch",        category:"ai",    level:"Intermediate", proficiency:70, description:"Dynamic computation graphs and research-oriented deep learning model training.", projects:[] },
+            { icon:"🗣️",  devicon:null,                                    name:"NLTK",           category:"ai",    level:"Intermediate", proficiency:70, description:"NLP toolkit for tokenization, stemming, POS tagging, and corpus analysis.", projects:["sentiment"] },
+            { icon:"🕷️",  devicon:null,                                    name:"SpaCy",          category:"ai",    level:"Intermediate", proficiency:70, description:"Industrial-strength NLP for named entity recognition and dependency parsing.", projects:[] },
             // Development
             { icon:"🌐",  devicon:"devicon-html5-plain colored",           name:"HTML & CSS",     category:"dev",   level:"Advanced",     proficiency:82, description:"Built responsive web applications and portfolio sites with modern CSS layouts and animations.", projects:["blackjack"] },
             { icon:"⚡",  devicon:"devicon-javascript-plain colored",      name:"JavaScript",     category:"dev",   level:"Advanced",     proficiency:78, description:"Frontend scripting for interactive UIs, DOM manipulation, and async API calls.", projects:["blackjack"] },
@@ -559,7 +579,7 @@
             { icon:"🔶",  devicon:"devicon-oracle-original colored",       name:"Oracle DB",      category:"dev",   level:"Intermediate", proficiency:65, description:"Enterprise relational database management and PL/SQL programming.", projects:[] },
             { icon:"⚡",  devicon:null,                                    name:"DynamoDB",       category:"dev",   level:"Intermediate", proficiency:68, description:"AWS NoSQL key-value store for serverless, low-latency application backends.", projects:["sentiment"] },
             // Tools
-            { icon:"🐙",  devicon:"devicon-github-original colored",       name:"Git & GitHub",   category:"tools", level:"Expert",       proficiency:90, description:"Version control, branching strategies, pull requests, and collaborative dev workflows.", projects:[] },
+            { icon:"🐙",  devicon:"devicon-github-original colored",       name:"Git & GitHub",   category:"tools", level:"Advanced",     proficiency:85, description:"Version control, branching strategies, pull requests, and collaborative dev workflows.", projects:[] },
             { icon:"📋",  devicon:"devicon-jira-plain colored",            name:"Jira",           category:"tools", level:"Advanced",     proficiency:78, description:"Agile project management, sprint planning, and backlog grooming in professional settings.", projects:[] },
             { icon:"🔧",  devicon:null,                                    name:"ETL Pipelines",  category:"tools", level:"Expert",       proficiency:85, description:"End-to-end pipeline design using AWS Glue, Python, and Spark for large-scale data movement.", projects:["sentiment"] },
             { icon:"📐",  devicon:null,                                    name:"Visio",          category:"tools", level:"Intermediate", proficiency:65, description:"Process flow, system architecture, and ER diagrams for technical documentation.", projects:[] },
