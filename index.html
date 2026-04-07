@@ -18,6 +18,14 @@
 </head>
 
 <body>
+    <!-- Intro splash screen -->
+    <div id="intro-screen">
+        <div class="intro-content">
+            <h1 class="intro-name">Yajushi Garg</h1>
+            <p class="intro-sub">AI Engineer &amp; Data Analyst</p>
+        </div>
+    </div>
+
     <!-- Navbar header section -->
     <header class="header">
         <nav class="navbar">
@@ -78,7 +86,7 @@
                 <span class="bubble-arrow"></span>
             </div>
             <div class="lottie-wrapper">
-                <svg id="robot-svg" viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg" aria-label="Waving AI Robot">
+                <svg id="robot-svg" viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg" aria-label="Waving AI Robot">
                     <defs>
                         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                             <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
@@ -456,15 +464,17 @@
         </script>
     <script src="main.js"></script>
     <script>
-        // Typing animation
+        // Typing animation — delayed until after intro screen exits (~2.6s)
         const name = "Yajushi Garg";
         let charIndex = 0;
         const nameEl = document.getElementById('typed-name');
-        const typeInterval = setInterval(() => {
-            nameEl.textContent += name[charIndex];
-            charIndex++;
-            if (charIndex === name.length) clearInterval(typeInterval);
-        }, 100);
+        setTimeout(() => {
+            const typeInterval = setInterval(() => {
+                nameEl.textContent += name[charIndex];
+                charIndex++;
+                if (charIndex === name.length) clearInterval(typeInterval);
+            }, 100);
+        }, 2600);
 
         // Smooth rotating text
         const roles = ["AI Engineer", "Data Analyst", "ML Enthusiast", "Business Analyst"];
