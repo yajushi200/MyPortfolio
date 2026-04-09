@@ -1419,7 +1419,6 @@ body {
    ============================================ */
 .awards {
     padding: 4rem 5rem;
-    min-height: 100vh;
     background: linear-gradient(135deg, #0a0a1a 0%, #1a0d2e 50%, #0a0a1a 100%);
 }
 
@@ -1427,17 +1426,41 @@ body {
     margin-top: 2.5rem;
 }
 
+/* pill-style sub-heading */
 .awards-sub-heading {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #35A99C;
-    margin-bottom: 1rem;
     display: flex;
     align-items: center;
-    gap: 8px;
-    letter-spacing: 0.5px;
-    border-bottom: 1px solid rgba(53,169,156,0.2);
-    padding-bottom: 0.5rem;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+}
+
+.awards-sub-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(53,169,156,0.12);
+    border: 1px solid rgba(53,169,156,0.35);
+    color: #35A99C;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 24px;
+}
+
+.awards-sub-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: rgba(53,169,156,0.18);
+    color: #35A99C;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 1px solid rgba(53,169,156,0.3);
 }
 
 .awards-sub-icon {
@@ -1485,6 +1508,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.award-card:hover .award-icon-wrap {
+    transform: scale(1.18) rotate(-6deg);
+    background: rgba(53,169,156,0.22);
 }
 
 .award-info {
@@ -1492,12 +1521,34 @@ body {
     min-width: 0;
 }
 
-.award-info h4 {
+/* title + year on same row */
+.award-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.award-title-row h4 {
     color: #fff;
-    margin: 0 0 4px 0;
+    margin: 0;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.2px;
+}
+
+.award-year {
+    font-size: 0.68rem;
+    color: #888;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 2px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 3px;
 }
 
 .award-org {
@@ -1527,11 +1578,12 @@ body {
     color: #35A99C;
     font-weight: 500;
     opacity: 0.75;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .award-card:hover .award-cta {
     opacity: 1;
+    transform: translateX(3px);
 }
 
 .award-badge {
