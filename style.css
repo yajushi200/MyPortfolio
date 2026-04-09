@@ -764,7 +764,7 @@ body {
    ============================================ */
 .skill-flip-wrapper {
     perspective: 1000px;
-    height: 220px;
+    height: 175px;
     cursor: pointer;
 }
 
@@ -823,7 +823,7 @@ body {
 }
 
 .skill-devicon {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
 }
 
 .skill-flip-front h3 {
@@ -1482,7 +1482,7 @@ textarea.form-controls {
 
 @media (max-width: 575px) {
     .skills { padding: 3rem 1.5rem; }
-    .skill-flip-wrapper { height: 215px; }
+    .skill-flip-wrapper { height: 175px; }
     .certifications, .awards, .contact { padding: 2.5rem 1rem; }
 }
 /* ── Intro / splash screen ─────────────────────────────────── */
