@@ -266,7 +266,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: linear-gradient(135deg, #0a0a1a 0%, #0d1f2d 50%, #0a1a1a 100%);
+  background: linear-gradient(135deg, #071a18 0%, #0f2e2a 50%, #071a18 100%);
   padding: 5rem;
   box-sizing: border-box;
   gap: 4rem;
@@ -354,7 +354,7 @@ body::before {
 /* Portfolio section styles */
 .portfolio {
     padding: 4rem 5rem;
-    background: linear-gradient(135deg, #0a0a1a 0%, #0d1a2d 50%, #0a0a1a 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #131320 50%, #0a0a0a 100%);
 }
 
 .portfolio-content {
@@ -738,7 +738,7 @@ body {
 
 .skills {
   padding: 5rem 4rem;
-  background-color: #0a0a1a;
+  background-color: #060d1f;
 }
 
 .skills-subheading {
@@ -1078,7 +1078,7 @@ body {
    ============================================ */
 .education {
     padding: 4rem 5rem;
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a1205 50%, #0a0a1a 100%);
+    background: linear-gradient(135deg, #12100a 0%, #211c07 50%, #12100a 100%);
 }
 
 .degree-card-wrapper {
@@ -1352,7 +1352,7 @@ body {
    ============================================ */
 .certifications {
     padding: 4rem 5rem;
-    background: linear-gradient(135deg, #0a0a1a 0%, #0d1f2d 50%, #0a1a1a 100%);
+    background: linear-gradient(135deg, #060d1f 0%, #0d1a35 50%, #060d1f 100%);
 }
 
 .certs-grid {
@@ -1419,7 +1419,7 @@ body {
    ============================================ */
 .awards {
     padding: 4rem 5rem;
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a0d2e 50%, #0a0a1a 100%);
+    background: linear-gradient(135deg, #100a1a 0%, #1e0d35 50%, #100a1a 100%);
 }
 
 .awards-subsection {
@@ -1602,7 +1602,7 @@ body {
    ============================================ */
 .contact {
     padding: 4rem 5rem;
-    background: #0a0a1a;
+    background: #070d12;
 }
 
 .contact-inner {
