@@ -1,6 +1,10 @@
 /* Styles defined for the desktop or the bigger screen devices*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
 
+html {
+    scroll-padding-top: 75px;
+}
+
 body { 
 	margin: 0; 
 	padding: 0; 
@@ -238,6 +242,10 @@ body::before {
 
  
 /* Portfolio section styles */
+.portfolio {
+    padding: 4rem 5rem;
+}
+
 .portfolio-content {
     display: flex;
     flex-direction: column;
@@ -959,6 +967,7 @@ body {
    ============================================ */
 .education {
     padding: 4rem 5rem;
+    min-height: 100vh;
     background: linear-gradient(135deg, #0a0a1a 0%, #1a1205 50%, #0a0a1a 100%);
 }
 
@@ -1300,6 +1309,7 @@ body {
    ============================================ */
 .awards {
     padding: 4rem 5rem;
+    min-height: 100vh;
     background: linear-gradient(135deg, #0a0a1a 0%, #1a0d2e 50%, #0a0a1a 100%);
 }
 
