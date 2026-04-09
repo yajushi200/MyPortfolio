@@ -26,26 +26,10 @@
     }
 
     .portfolio {
-        padding: 0;
+        padding: 2rem 1.5rem;
     }
 
     .about {
-        flex-direction: column;
-    }
-
-    .about .about-text {
-        padding: 2rem;
-    }
-
-    .about .about-image img {
-        padding: 2rem;
-    }
-
-    .services {
-        padding: 0;
-    }
-
-    .my-row {
         gap: 10px;
     }
 
@@ -108,7 +92,7 @@
     }
 
     .portfolio {
-        padding: 0;
+        padding: 2rem 1rem;
     }
 
     .about {

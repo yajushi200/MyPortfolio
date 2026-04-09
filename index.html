@@ -15,14 +15,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="images/4.jpg" fetchpriority="high">
 </head>
 
 <body>
     <!-- Intro splash screen -->
     <div id="intro-screen">
-        <div class="intro-content">
-            <h1 class="intro-name">Yajushi Garg</h1>
-            <p class="intro-sub">AI Engineer &amp; Data Analyst</p>
+        <div class="intro-half intro-half-top"></div>
+        <div class="intro-half intro-half-bottom"></div>
+        <div class="intro-inner">
+            <canvas id="intro-particles"></canvas>
+            <div class="intro-content">
+                <h1 class="intro-name">
+                    <span class="intro-name-text" id="intro-typed"></span><span class="intro-cursor">|</span>
+                </h1>
+                <p class="intro-sub">AI Engineer &amp; Data Analyst</p>
+            </div>
         </div>
     </div>
 
@@ -54,13 +62,18 @@
                         </a>
                     </li>
                     <li class="menu-list-items">
-                        <a class="links" href="#portfolio">
-                            Portfolio
+                        <a class="links" href="#education">
+                            Education
                         </a>
                     </li>
                     <li class="menu-list-items">
-                        <a class="links" href="#education">
-                            Education
+                        <a class="links" href="#certifications">
+                            Certifications
+                        </a>
+                    </li>
+                    <li class="menu-list-items">
+                        <a class="links" href="#portfolio">
+                            Portfolio
                         </a>
                     </li>
                     <li class="menu-list-items">
@@ -182,31 +195,62 @@
     <section id="about" class="about">
         <div class="about-text">
             <h1 class="my-heading">About <span style="color:#35A99C">Me</span></h1>
-            <p class="about-desc">
-                Honours graduate from <span class="highlight">Centennial College</span> with an Advanced Diploma in
-                Software Engineering Technology specialising in Artificial Intelligence,
-                graduating with a <span class="highlight">GPA of 4.299 out of 4.5.</span>
-                I am a results-driven <span class="highlight">AI Engineer &amp; Data Analyst</span> passionate about
+            <p class="about-intro">
+                Honours graduate from <span class="highlight">Centennial College</span> — AI specialisation,
+                <span class="highlight">GPA 4.299 / 4.5</span> — and a results-driven
+                <span class="highlight">AI Engineer &amp; Data Analyst</span> passionate about
                 turning complex data into actionable intelligence.
             </p>
 
-            <p class="about-desc">
-                As a <span class="highlight">Data Analyst Intern</span> at Scriptics Technologies, I designed and
-                deployed end-to-end ETL pipelines, Power BI dashboards, and AWS cloud workflows using Glue, S3,
-                and Redshift. I also contributed as a <span class="highlight">Software Lab Assistant</span> at
-                Centennial College and previously gained industry exposure as an
-                <span class="highlight">IT Technologist Intern</span> handling system support and infrastructure.
-            </p>
+            <!-- Experience -->
+            <p class="about-section-label">Experience</p>
+            <div class="about-experience">
+                <div class="exp-card">
+                    <div class="exp-icon">💼</div>
+                    <div class="exp-body">
+                        <h4>Data Analyst Intern</h4>
+                        <p class="exp-company">Scriptics Technologies</p>
+                        <p class="exp-detail">ETL pipelines · Power BI dashboards · SQL and Excel</p>
+                    </div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-icon">🖥️</div>
+                    <div class="exp-body">
+                        <h4>Software Lab Assistant</h4>
+                        <p class="exp-company">Centennial College</p>
+                        <p class="exp-detail">AWS · Troubleshooting · Deploy app · Student support</p>
+                    </div>
+                </div>
+                <div class="exp-card">
+                    <div class="exp-icon">🔧</div>
+                    <div class="exp-body">
+                        <h4>IT Technologist Intern</h4>
+                        <p class="exp-company">Industry Exposure</p>
+                        <p class="exp-detail">Power Apps · Microsoft System support · IT operations</p>
+                    </div>
+                </div>
+            </div>
 
-            <p class="about-desc">
-                My portfolio spans AI, ML, and cloud engineering — including
-                <a href="AiTutor.pdf" target="_blank" class="highlight"><strong>Luminate AI</strong></a>, a multi-agent tutoring
-                system built with LangGraph, LangChain, ChromaDB, and Google Gemini;
-                a <a href="MarineSpecies.pdf" target="_blank" class="highlight"><strong>Marine Species Classifier</strong></a> achieving
-                91.82% accuracy using ResNet50 transfer learning; and an
-                <a href="AWS_SentimentAnalysis.pdf" target="_blank" class="highlight"><strong>Amazon Reviews Sentiment Analysis</strong></a>
-                pipeline powered by NLP and AWS cloud services.
-            </p>
+            <!-- Featured Projects -->
+            <p class="about-section-label">Featured Projects</p>
+            <div class="about-projects">
+                <a href="AiTutor.pdf" target="_blank" rel="noopener" class="proj-chip">
+                    <span class="proj-chip-icon">🤖</span>
+                    <span>Luminate AI</span>
+                    <span class="proj-chip-tag">LangGraph · Gemini</span>
+                </a>
+                <a href="MarineSpecies.pdf" target="_blank" rel="noopener" class="proj-chip">
+                    <span class="proj-chip-icon">🐠</span>
+                    <span>Marine Classifier</span>
+                    <span class="proj-chip-tag">ResNet50 · 91.82%</span>
+                </a>
+                <a href="AWS_SentimentAnalysis.pdf" target="_blank" rel="noopener" class="proj-chip">
+                    <span class="proj-chip-icon">☁️</span>
+                    <span>AWS Sentiment Analysis</span>
+                    <span class="proj-chip-tag">NLP · AWS</span>
+                </a>
+            </div>
+
             <div class="about-stats">
                 <div class="stat-box">
                     <h2>4.299</h2>
@@ -356,46 +400,12 @@
         </div>
     </section>
 
-    <!-- Awards & Volunteering Section -->
-    <section class="awards" id="awards">
-        <h1 class="my-heading text-center">Awards &amp; Volunteering</h1>
-        <p class="skills-subheading">Recognition, community contributions, and leadership experiences</p>
-        <div class="awards-grid">
-            <a class="award-card" href="Awards/Centennial_Volunteering.pdf" target="_blank" rel="noopener">
-                <div class="award-icon">🎓</div>
-                <div class="award-info">
-                    <h4>Centennial College Volunteering</h4>
-                    <p>Centennial College</p>
-                    <span class="award-badge">Volunteering</span>
-                </div>
-            </a>
-            <a class="award-card" href="Awards/TTC_Hackathon.pdf" target="_blank" rel="noopener">
-                <div class="award-icon">🏆</div>
-                <div class="award-info">
-                    <h4>3rd Prize — TTC Hackathon</h4>
-                    <p>Toronto Transit Commission</p>
-                    <span class="award-badge">Award</span>
-                </div>
-            </a>
-            <a class="award-card" href="Awards/Leadership_Retreat.pdf" target="_blank" rel="noopener">
-                <div class="award-icon">🌟</div>
-                <div class="award-info">
-                    <h4>Leadership Retreat</h4>
-                    <p>Certificate of Participation</p>
-                    <span class="award-badge">Leadership</span>
-                </div>
-            </a>
-        </div>
-    </section>
-
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="portfolio-heading">
-            <h1 class="my-heading text-center">Featured Portfolio</h1>
+            <h1 class="my-heading text-center">Projects</h1>
+            <p class="skills-subheading">A selection of things I've built</p>
         </div>
-        <br>
-        <br>
-        <br>
         <div class="portfolio-content">
             <div class="my-row">
                 <a href="https://black-jack-red.vercel.app/">
@@ -510,6 +520,77 @@
     </section>
     <br>
     <br>
+
+    <!-- Awards & Volunteering Section -->
+    <section class="awards" id="awards">
+        <h1 class="my-heading text-center">Awards &amp; Volunteering</h1>
+        <p class="skills-subheading">Recognition, community contributions, and leadership experiences</p>
+
+        <!-- Awards Sub-section -->
+        <div class="awards-subsection">
+            <div class="awards-sub-heading">
+                <span class="awards-sub-pill">🏆 Awards</span>
+                <span class="awards-sub-count">2</span>
+            </div>
+            <div class="awards-grid">
+                <a class="award-card" href="Awards/TTC_Hackathon.pdf" target="_blank" rel="noopener">
+                    <div class="award-icon-wrap">🏆</div>
+                    <div class="award-info">
+                        <div class="award-title-row">
+                            <h4>3rd Prize — TTC Hackathon</h4>
+                            <span class="award-year">2024</span>
+                        </div>
+                        <p class="award-org">Toronto Transit Commission</p>
+                        <p class="award-desc">3-day hackathon focused on designing an app to increase safety for both passengers and drivers.</p>
+                        <div class="award-footer">
+                            <span class="award-badge">Award</span>
+                            <span class="award-cta">View Certificate →</span>
+                        </div>
+                    </div>
+                </a>
+                <a class="award-card" href="Awards/Leadership_Retreat.pdf" target="_blank" rel="noopener">
+                    <div class="award-icon-wrap">🌟</div>
+                    <div class="award-info">
+                        <div class="award-title-row">
+                            <h4>Leadership Retreat</h4>
+                            <span class="award-year">2023</span>
+                        </div>
+                        <p class="award-org">Certificate of Participation</p>
+                        <p class="award-desc">A full day of skill-building at YMCA Glen Outdoor Centre, with hands-on activities like climbing and team challenges.</p>
+                        <div class="award-footer">
+                            <span class="award-badge">Leadership</span>
+                            <span class="award-cta">View Certificate →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Volunteering Sub-section -->
+        <div class="awards-subsection">
+            <div class="awards-sub-heading">
+                <span class="awards-sub-pill">🤝 Volunteering</span>
+                <span class="awards-sub-count">1</span>
+            </div>
+            <div class="awards-grid">
+                <a class="award-card" href="Awards/Centennial_Volunteering.pdf" target="_blank" rel="noopener">
+                    <div class="award-icon-wrap">🎓</div>
+                    <div class="award-info">
+                        <div class="award-title-row">
+                            <h4>Centennial College Volunteering</h4>
+                            <span class="award-year">2023</span>
+                        </div>
+                        <p class="award-org">Centennial College</p>
+                        <p class="award-desc">Served as a welcome team member for new students, helping them settle in and feel at home on campus.</p>
+                        <div class="award-footer">
+                            <span class="award-badge">Volunteering</span>
+                            <span class="award-cta">View Certificate →</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
    

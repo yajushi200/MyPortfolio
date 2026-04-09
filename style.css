@@ -1,6 +1,10 @@
 /* Styles defined for the desktop or the bigger screen devices*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
 
+html {
+    scroll-padding-top: 75px;
+}
+
 body { 
 	margin: 0; 
 	padding: 0; 
@@ -145,6 +149,116 @@ body::before {
 }
 
 
+.about-intro {
+  color: #cccccc;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.about-section-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #35A99C;
+  font-weight: 700;
+  margin: 1.6rem 0 0.75rem;
+}
+
+/* Experience cards */
+.about-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #13132a;
+  border: 1px solid #1e1e3a;
+  border-left: 3px solid #35A99C;
+  border-radius: 12px;
+  padding: 0.85rem 1.2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-left-color 0.25s ease;
+}
+
+.exp-card:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 22px rgba(53,169,156,0.18);
+  border-left-color: #4ecdc4;
+}
+
+.exp-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.exp-body h4 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 2px;
+}
+
+.exp-company {
+  color: #35A99C;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.exp-detail {
+  color: #888;
+  font-size: 0.76rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Project chips */
+.about-projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.proj-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(53,169,156,0.08);
+  border: 1px solid rgba(53,169,156,0.3);
+  border-radius: 24px;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.83rem;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.proj-chip:hover {
+  background: rgba(53,169,156,0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(53,169,156,0.25);
+}
+
+.proj-chip-icon {
+  font-size: 1rem;
+}
+
+.proj-chip-tag {
+  font-size: 0.68rem;
+  color: #35A99C;
+  background: rgba(53,169,156,0.12);
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
 /* About section styles */
 
 .about {
@@ -238,6 +352,11 @@ body::before {
 
  
 /* Portfolio section styles */
+.portfolio {
+    padding: 4rem 5rem;
+    background: linear-gradient(135deg, #0a0a0a 0%, #131320 50%, #0a0a0a 100%);
+}
+
 .portfolio-content {
     display: flex;
     flex-direction: column;
@@ -619,7 +738,7 @@ body {
 
 .skills {
   padding: 5rem 4rem;
-  background-color: #0a0a1a;
+  background-color: #060d1f;
 }
 
 .skills-subheading {
@@ -764,7 +883,7 @@ body {
    ============================================ */
 .skill-flip-wrapper {
     perspective: 1000px;
-    height: 220px;
+    height: 175px;
     cursor: pointer;
 }
 
@@ -823,7 +942,7 @@ body {
 }
 
 .skill-devicon {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
 }
 
 .skill-flip-front h3 {
@@ -959,7 +1078,7 @@ body {
    ============================================ */
 .education {
     padding: 4rem 5rem;
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a1205 50%, #0a0a1a 100%);
+    background: linear-gradient(135deg, #12100a 0%, #211c07 50%, #12100a 100%);
 }
 
 .degree-card-wrapper {
@@ -1155,7 +1274,7 @@ body {
 }
 
 .degree-details.open {
-    max-height: 500px;
+    max-height: 900px;
 }
 
 .degree-details-inner {
@@ -1233,15 +1352,15 @@ body {
    ============================================ */
 .certifications {
     padding: 4rem 5rem;
-    background: linear-gradient(135deg, #0a0a1a 0%, #0d1f2d 50%, #0a1a1a 100%);
+    background: linear-gradient(135deg, #060d1f 0%, #0d1a35 50%, #060d1f 100%);
 }
 
 .certs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 380px));
     gap: 24px;
     margin-top: 1.5rem;
-    justify-items: center;
+    justify-content: center;
 }
 
 .cert-card {
@@ -1300,25 +1419,72 @@ body {
    ============================================ */
 .awards {
     padding: 4rem 5rem;
-    background: linear-gradient(135deg, #0a0a1a 0%, #1a0d2e 50%, #0a0a1a 100%);
+    background: linear-gradient(135deg, #100a1a 0%, #1e0d35 50%, #100a1a 100%);
+}
+
+.awards-subsection {
+    margin-top: 2.5rem;
+}
+
+/* pill-style sub-heading */
+.awards-sub-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+}
+
+.awards-sub-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(53,169,156,0.12);
+    border: 1px solid rgba(53,169,156,0.35);
+    color: #35A99C;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 24px;
+}
+
+.awards-sub-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: rgba(53,169,156,0.18);
+    color: #35A99C;
+    font-size: 0.72rem;
+    font-weight: 700;
+    border-radius: 50%;
+    border: 1px solid rgba(53,169,156,0.3);
+}
+
+.awards-sub-icon {
+    font-size: 1.2rem;
 }
 
 .awards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 24px;
-    margin-top: 1.5rem;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+    gap: 28px;
+    margin-top: 1rem;
+    justify-content: center;
 }
 
 .award-card {
-    background: #13132a;
-    border: 1px solid #1e1e3a;
+    background: linear-gradient(135deg, #1c1b3a 0%, #231f4a 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-left: 4px solid #35A99C;
     border-radius: 16px;
     padding: 1.5rem;
     display: flex;
     align-items: flex-start;
-    gap: 16px;
+    gap: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.45);
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     text-decoration: none;
     color: inherit;
@@ -1327,28 +1493,98 @@ body {
 
 .award-card:hover {
     transform: translateY(-6px);
-    box-shadow: 0 10px 30px rgba(53,169,156,0.2);
-    border-color: #35A99C;
+    box-shadow: 0 12px 36px rgba(53,169,156,0.25);
+    border-left-color: #4ecdc4;
+    border-color: rgba(53,169,156,0.4);
 }
 
-.award-icon {
-    font-size: 2.2rem;
+.award-icon-wrap {
+    font-size: 1.6rem;
     flex-shrink: 0;
-    width: 48px;
-    text-align: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(53,169,156,0.12);
+    border: 1px solid rgba(53,169,156,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.award-info h4 {
+.award-card:hover .award-icon-wrap {
+    transform: scale(1.18) rotate(-6deg);
+    background: rgba(53,169,156,0.22);
+}
+
+.award-info {
+    flex: 1;
+    min-width: 0;
+}
+
+/* title + year on same row */
+.award-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+}
+
+.award-title-row h4 {
     color: #fff;
-    margin: 0 0 4px 0;
-    font-size: 0.95rem;
-    font-weight: 600;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.2px;
 }
 
-.award-info p {
+.award-year {
+    font-size: 0.68rem;
     color: #888;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 2px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.award-org {
+    color: #35A99C;
     margin: 0 0 8px 0;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.award-desc {
+    color: #b0b0c8;
+    font-size: 0.83rem;
+    line-height: 1.55;
+    margin: 0 0 14px 0;
+}
+
+.award-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.award-cta {
+    font-size: 0.75rem;
+    color: #35A99C;
+    font-weight: 500;
+    opacity: 0.75;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.award-card:hover .award-cta {
+    opacity: 1;
+    transform: translateX(3px);
 }
 
 .award-badge {
@@ -1367,7 +1603,7 @@ body {
    ============================================ */
 .contact {
     padding: 4rem 5rem;
-    background: #0a0a1a;
+    background: #070d12;
 }
 
 .contact-inner {
@@ -1482,7 +1718,7 @@ textarea.form-controls {
 
 @media (max-width: 575px) {
     .skills { padding: 3rem 1.5rem; }
-    .skill-flip-wrapper { height: 215px; }
+    .skill-flip-wrapper { height: 175px; }
     .certifications, .awards, .contact { padding: 2.5rem 1rem; }
 }
 /* ── Intro / splash screen ─────────────────────────────────── */
@@ -1490,48 +1726,107 @@ textarea.form-controls {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #0a0f2c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: introSlideUp 0.6s cubic-bezier(0.76, 0, 0.24, 1) 2s forwards;
+  overflow: hidden;
   pointer-events: none;
 }
 
+/* Two halves that slide apart on exit — they ARE the background */
+.intro-half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(-45deg, #0a0f2c, #0d1b3e, #071a18, #0a1428);
+  background-size: 400% 400%;
+  animation: introGradientShift 5s ease infinite;
+  transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: 1;
+}
+
+.intro-half-top  { top: 0; }
+.intro-half-bottom { bottom: 0; }
+
+/* Exit: halves slide away */
+#intro-screen.intro-exit .intro-half-top    { transform: translateY(-100%); }
+#intro-screen.intro-exit .intro-half-bottom { transform: translateY(100%); }
+
+/* Inner layer: canvas + text, sits above the halves */
+.intro-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s ease;
+}
+
+#intro-screen.intro-exit .intro-inner { opacity: 0; }
+
+/* Particle canvas */
+#intro-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .intro-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 
 .intro-name {
   font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: introTextIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+
+/* Shimmer gradient text on the typed name */
+.intro-name-text {
+  background: linear-gradient(90deg, #ffffff 0%, #35A99C 45%, #7fd4ce 70%, #ffffff 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: introShimmer 2.2s linear infinite;
+}
+
+/* Blinking cursor */
+.intro-cursor {
+  color: #35A99C;
+  -webkit-text-fill-color: #35A99C;
+  font-weight: 300;
+  animation: introBlink 0.7s step-end infinite;
 }
 
 .intro-sub {
   font-size: clamp(0.9rem, 2.5vw, 1.3rem);
   color: #35A99C;
-  margin-top: 0.5rem;
+  letter-spacing: 0.08em;
+  margin-top: 0.6rem;
   opacity: 0;
-  transform: translateY(20px);
-  animation: introTextIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
-@keyframes introTextIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.intro-sub.intro-sub-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes introSlideUp {
-  to {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-  }
+@keyframes introShimmer {
+  to { background-position: 250% center; }
+}
+
+@keyframes introBlink {
+  50% { opacity: 0; }
+}
+
+@keyframes introGradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
