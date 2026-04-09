@@ -266,7 +266,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  background: linear-gradient(135deg, #071a18 0%, #0f2e2a 50%, #071a18 100%);
+  background: linear-gradient(135deg, #0a0a1a 0%, #0d1f2d 50%, #0a1a1a 100%);
   padding: 5rem;
   box-sizing: border-box;
   gap: 4rem;
