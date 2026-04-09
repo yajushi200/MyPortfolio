@@ -1382,6 +1382,13 @@ body {
     font-size: 0.82rem;
 }
 
+.award-desc {
+    color: #aaa !important;
+    font-size: 0.78rem !important;
+    line-height: 1.5;
+    margin: 0 0 10px 0 !important;
+}
+
 .award-badge {
     display: inline-block;
     font-size: 0.7rem;
