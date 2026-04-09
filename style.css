@@ -1725,48 +1725,107 @@ textarea.form-controls {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #0a0f2c;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: introSlideUp 0.6s cubic-bezier(0.76, 0, 0.24, 1) 2s forwards;
+  overflow: hidden;
   pointer-events: none;
 }
 
+/* Two halves that slide apart on exit — they ARE the background */
+.intro-half {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(-45deg, #0a0f2c, #0d1b3e, #071a18, #0a1428);
+  background-size: 400% 400%;
+  animation: introGradientShift 5s ease infinite;
+  transition: transform 0.75s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: 1;
+}
+
+.intro-half-top  { top: 0; }
+.intro-half-bottom { bottom: 0; }
+
+/* Exit: halves slide away */
+#intro-screen.intro-exit .intro-half-top    { transform: translateY(-100%); }
+#intro-screen.intro-exit .intro-half-bottom { transform: translateY(100%); }
+
+/* Inner layer: canvas + text, sits above the halves */
+.intro-inner {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s ease;
+}
+
+#intro-screen.intro-exit .intro-inner { opacity: 0; }
+
+/* Particle canvas */
+#intro-particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .intro-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 
 .intro-name {
   font-size: clamp(2rem, 6vw, 4rem);
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: introTextIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+
+/* Shimmer gradient text on the typed name */
+.intro-name-text {
+  background: linear-gradient(90deg, #ffffff 0%, #35A99C 45%, #7fd4ce 70%, #ffffff 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: introShimmer 2.2s linear infinite;
+}
+
+/* Blinking cursor */
+.intro-cursor {
+  color: #35A99C;
+  -webkit-text-fill-color: #35A99C;
+  font-weight: 300;
+  animation: introBlink 0.7s step-end infinite;
 }
 
 .intro-sub {
   font-size: clamp(0.9rem, 2.5vw, 1.3rem);
   color: #35A99C;
-  margin-top: 0.5rem;
+  letter-spacing: 0.08em;
+  margin-top: 0.6rem;
   opacity: 0;
-  transform: translateY(20px);
-  animation: introTextIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
-@keyframes introTextIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.intro-sub.intro-sub-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes introSlideUp {
-  to {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-  }
+@keyframes introShimmer {
+  to { background-position: 250% center; }
+}
+
+@keyframes introBlink {
+  50% { opacity: 0; }
+}
+
+@keyframes introGradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

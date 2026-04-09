@@ -51,21 +51,102 @@ const observer = new IntersectionObserver(entries => {
     });
 }); */
 
-/* const skillContainer = document.querySelector('.skills-container');
-const spans = document.querySelectorAll('.bar span');
-const percentages = document.querySelectorAll('.percentage');
+// ── Intro splash: particle network + typewriter + split-screen exit ──
+(function () {
+  var screen   = document.getElementById('intro-screen');
+  var typedEl  = document.getElementById('intro-typed');
+  var subEl    = document.querySelector('.intro-sub');
+  var canvas   = document.getElementById('intro-particles');
+  var ctx      = canvas.getContext('2d');
+  var NAME     = 'Yajushi Garg';
+  var PCOUNT   = 65;
+  var LINK_DIST = 130;
+  var particles = [];
+  var rafId;
 
-window.addEventListener('load', () => {
-    updatePercentagePositions();
-});
+  function resizeCanvas() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
 
-function updatePercentagePositions() {
-    const bars = document.querySelectorAll('.bar');
-    bars.forEach(bar => {
-        const barWidth = bar.clientWidth;
-        const percentage = bar.nextElementSibling;
-        const widthPercentage = parseFloat(percentage.textContent) / 100;
-        percentage.style.left = `${barWidth * widthPercentage - 12.5}px`;
+  function makeParticle() {
+    return {
+      x:     Math.random() * canvas.width,
+      y:     Math.random() * canvas.height,
+      r:     Math.random() * 1.8 + 0.4,
+      dx:    (Math.random() - 0.5) * 0.45,
+      dy:    (Math.random() - 0.5) * 0.45,
+      alpha: Math.random() * 0.45 + 0.2,
+      teal:  Math.random() > 0.45
+    };
+  }
+
+  for (var i = 0; i < PCOUNT; i++) particles.push(makeParticle());
+
+  function drawFrame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw connecting lines first (below dots)
+    for (var a = 0; a < particles.length; a++) {
+      for (var b = a + 1; b < particles.length; b++) {
+        var dx = particles[a].x - particles[b].x;
+        var dy = particles[a].y - particles[b].y;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < LINK_DIST) {
+          ctx.beginPath();
+          ctx.moveTo(particles[a].x, particles[a].y);
+          ctx.lineTo(particles[b].x, particles[b].y);
+          ctx.strokeStyle = 'rgba(53,169,156,' + (0.18 * (1 - dist / LINK_DIST)).toFixed(3) + ')';
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw dots
+    particles.forEach(function (p) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.teal
+        ? 'rgba(53,169,156,' + p.alpha + ')'
+        : 'rgba(130,160,255,' + p.alpha + ')';
+      ctx.fill();
+
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width)  p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
     });
-} */
+
+    rafId = requestAnimationFrame(drawFrame);
+  }
+  drawFrame();
+
+  // Typewriter
+  var charIndex = 0;
+  function typeNext() {
+    if (charIndex < NAME.length) {
+      typedEl.textContent += NAME[charIndex++];
+      setTimeout(typeNext, 75);
+    } else {
+      // Subtitle slides in after typing finishes
+      setTimeout(function () {
+        subEl.classList.add('intro-sub-visible');
+      }, 220);
+      // Trigger split exit
+      setTimeout(triggerExit, 1150);
+    }
+  }
+  setTimeout(typeNext, 320);
+
+  function triggerExit() {
+    screen.classList.add('intro-exit');
+    setTimeout(function () {
+      cancelAnimationFrame(rafId);
+      screen.style.display = 'none';
+    }, 850);
+  }
+})();
 
