@@ -164,39 +164,9 @@ const certifications = [
     verifyUrl: 'https://learn.microsoft.com/en-us/users/yajushigarg-0213/credentials/certification/implementing-data-engineering-solutions-using-azure-databricks?tab=credentials-tab'
   },
   {
-    name: 'Microsoft Azure Data Fundamentals (DP-900)',
-    issuer: 'Microsoft Certified: Fundamentals',
-    date: 'Date earned: Add date',
-    category: 'azure',
-    badgeImage: 'Certifications/Microsoft_Azure_Data_Fundamentals.png',
-    monogram: 'MS',
-    skills: ['Core data concepts', 'Relational and non-relational data', 'Azure data services'],
-    verifyUrl: 'https://learn.microsoft.com/en-us/users/yajushigarg-0213/credentials/certification/azure-data-fundamentals?tab=credentials-tab',
-  },
-  {
-    name: 'Databricks Lakehouse Fundamentals',
-    issuer: 'Databricks',
-    date: 'Date earned: Add date',
-    category: 'databricks',
-    badgeImage: 'Certifications/Databricks_Lakehouse_Fundamentals.png',
-    monogram: 'DB',
-    skills: ['Lakehouse architecture', 'Delta Lake', 'Data and AI workloads'],
-    verifyUrl: 'https://credentials.databricks.com/df2029d1-5097-461a-a5db-92206366b4ed#acc.A2k6Eibf'
-  },
-  {
-    name: 'Google Cloud Essentials',
-    issuer: 'Google Cloud',
-    date: 'Date earned: Add date',
-    category: 'google-cloud',
-    badgeImage: 'https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png',
-    monogram: 'GC',
-    skills: ['Cloud computing foundations', 'Google Cloud services', 'Cloud security basics'],
-    verifyUrl: 'https://www.skills.google/public_profiles/19c37573-3976-4ad5-98f7-fff248678fa3/badges/5966412?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share'
-  },
-  {
     name: 'AWS Data Engineer Associate Prep Course',
     issuer: 'Udemy',
-    date: 'Date earned: Add date',
+    date: 'Apr 2026',
     category: 'cloud',
     badgeImage: 'Certifications/Udemy_Certificate.jpg',
     monogram: 'AWS',
@@ -204,9 +174,39 @@ const certifications = [
     verifyUrl: 'Certifications/Udemy_Certificate.jpg'
   },
   {
+    name: 'Q-SYS Level 1 Training Certificate',
+    issuer: 'QSC / Q-SYS',
+    date: 'Jul 2025',
+    category: 'technology',
+    badgeImage: 'Certifications/QSYS_Level_1.png',
+    monogram: 'Q-SYS',
+    skills: ['AV system fundamentals', 'Q-SYS Designer', 'Audio and video routing'],
+    verifyUrl: 'Certifications/Q_SYS.pdf'
+  },
+  {
+    name: 'Databricks Lakehouse Fundamentals',
+    issuer: 'Databricks',
+    date: 'Jul 2024',
+    category: 'databricks',
+    badgeImage: 'Certifications/Databricks_Lakehouse_Fundamentals.png',
+    monogram: 'DB',
+    skills: ['Lakehouse architecture', 'Delta Lake', 'Data and AI workloads'],
+    verifyUrl: 'https://credentials.databricks.com/df2029d1-5097-461a-a5db-92206366b4ed#acc.A2k6Eibf'
+  },
+  {
+    name: 'Microsoft Azure Data Fundamentals (DP-900)',
+    issuer: 'Microsoft Certified: Fundamentals',
+    date: 'May 2024',
+    category: 'azure',
+    badgeImage: 'Certifications/Microsoft_Azure_Data_Fundamentals.png',
+    monogram: 'MS',
+    skills: ['Core data concepts', 'Relational and non-relational data', 'Azure data services'],
+    verifyUrl: 'https://learn.microsoft.com/en-us/users/yajushigarg-0213/credentials/certification/azure-data-fundamentals?tab=credentials-tab',
+  },
+  {
     name: 'Introduction to Career Skills in Data Analytics',
     issuer: 'LinkedIn Learning',
-    date: 'Date earned: Add date',
+    date: 'Apr 2024',
     category: 'data',
     badgeImage: 'Certifications/LinkedIn_Learning.png',
     monogram: 'DA',
@@ -214,24 +214,24 @@ const certifications = [
     verifyUrl: 'Certifications/Google_Data_Analytics.pdf'
   },
   {
+    name: 'Google Cloud Essentials',
+    issuer: 'Google Cloud',
+    date: 'Nov 2023',
+    category: 'google-cloud',
+    badgeImage: 'https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png',
+    monogram: 'GC',
+    skills: ['Cloud computing foundations', 'Google Cloud services', 'Cloud security basics'],
+    verifyUrl: 'https://www.skills.google/public_profiles/19c37573-3976-4ad5-98f7-fff248678fa3/badges/5966412?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share'
+  },
+  {
     name: 'Software Development Training Certificate',
     issuer: 'GAO Tek',
-    date: 'Date earned: Add date',
+    date: 'Jun 2023',
     category: 'development',
     badgeImage: 'Certifications/GAO_Tek.pdf',
     monogram: 'SD',
     skills: ['Software development lifecycle', 'Programming fundamentals', 'Technical collaboration'],
     verifyUrl: 'Certifications/GAO_Tek.pdf'
-  },
-  {
-    name: 'Q-SYS Level 1 Training Certificate',
-    issuer: 'QSC / Q-SYS',
-    date: 'Date earned: Add date',
-    category: 'technology',
-    badgeImage: 'Certifications/QSYS_Level_1.png',
-    monogram: 'Q-SYS',
-    skills: ['AV system fundamentals', 'Q-SYS Designer', 'Audio and video routing'],
-    verifyUrl: 'Certifications/Q_SYS.pdf'
   }
 ];
 
