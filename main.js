@@ -228,7 +228,7 @@ const certifications = [
     issuer: 'QSC / Q-SYS',
     date: 'Date earned: Add date',
     category: 'technology',
-    badgeImage: 'Certifications/Q_SYS.pdf',
+    badgeImage: 'Certifications/QSYS_Level_1.png',
     monogram: 'Q-SYS',
     skills: ['AV system fundamentals', 'Q-SYS Designer', 'Audio and video routing'],
     verifyUrl: 'Certifications/Q_SYS.pdf'
