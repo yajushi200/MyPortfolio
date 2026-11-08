@@ -1554,7 +1554,7 @@ body {
 
 .cert-detail-actions {
     display: grid;
-    flex: 0 0 180px;
+    flex: 0 0 150px;
     gap: 9px;
 }
 
@@ -1579,11 +1579,6 @@ body {
 .cert-verify {
     background: #35A99C;
     color: #06121d !important;
-}
-
-.cert-project {
-    border: 1px solid rgba(113,225,192,0.35);
-    background: rgba(53,169,156,0.1);
 }
 
 .cert-detail-actions a:hover {

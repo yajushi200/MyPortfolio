@@ -154,15 +154,14 @@ const observer = new IntersectionObserver(entries => {
 const certifications = [
   {
     name: 'Implementing Data Engineering Solutions Using Azure Databricks',
-    issuer: 'Microsoft',
-    date: 'Date earned: Add date',
+    issuer: 'Microsoft Certified: Associate',
+    date: 'Recently achieved',
     category: 'azure',
-    badgeImage: 'https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png',
+    badgeImage: 'Certifications/Microsoft_Azure_Databricks_Associate.png',
     monogram: 'MS',
     isNew: true,
     skills: ['Azure Databricks', 'Data engineering solutions', 'Lakehouse architecture'],
-    verifyUrl: '#',
-    projectUrl: 'https://github.com/yajushi200/f1-azure-databricks-lakehouse'
+    verifyUrl: 'https://learn.microsoft.com/en-us/users/yajushigarg-0213/credentials/certification/implementing-data-engineering-solutions-using-azure-databricks?tab=credentials-tab'
   },
   {
     name: 'Microsoft Azure Data Fundamentals (DP-900)',
@@ -173,7 +172,6 @@ const certifications = [
     monogram: 'MS',
     skills: ['Core data concepts', 'Relational and non-relational data', 'Azure data services'],
     verifyUrl: '#',
-    projectUrl: 'https://github.com/yajushi200/f1-azure-databricks-lakehouse'
   },
   {
     name: 'Databricks Lakehouse Fundamentals',
@@ -183,8 +181,7 @@ const certifications = [
     badgeImage: 'https://www.databricks.com/sites/default/files/2022-05/databricks-logo.png',
     monogram: 'DB',
     skills: ['Lakehouse architecture', 'Delta Lake', 'Data and AI workloads'],
-    verifyUrl: '#',
-    projectUrl: 'https://github.com/yajushi200/f1-azure-databricks-lakehouse'
+    verifyUrl: '#'
   },
   {
     name: 'Google Cloud Essentials',
@@ -194,8 +191,7 @@ const certifications = [
     badgeImage: 'https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png',
     monogram: 'GC',
     skills: ['Cloud computing foundations', 'Google Cloud services', 'Cloud security basics'],
-    verifyUrl: '#',
-    projectUrl: 'https://github.com/yajushi200/f1-azure-databricks-lakehouse'
+    verifyUrl: '#'
   }
 ];
 
@@ -208,7 +204,6 @@ const certifications = [
   const detailMeta = detailPanel.querySelector('.cert-detail-meta');
   const skillTags = detailPanel.querySelector('.cert-skill-tags');
   const verifyLink = detailPanel.querySelector('.cert-verify');
-  const projectLink = detailPanel.querySelector('.cert-project');
   let selectedIndex = -1;
 
   function createBadge(certification, index) {
@@ -305,7 +300,6 @@ const certifications = [
       skillTags.appendChild(tag);
     });
     verifyLink.href = certification.verifyUrl;
-    projectLink.href = certification.projectUrl;
     detailPanel.hidden = false;
   }
 
