@@ -178,10 +178,10 @@ const certifications = [
     issuer: 'Databricks',
     date: 'Date earned: Add date',
     category: 'databricks',
-    badgeImage: 'https://www.databricks.com/sites/default/files/2022-05/databricks-logo.png',
+    badgeImage: 'Certifications/Databricks_Lakehouse_Fundamentals.png',
     monogram: 'DB',
     skills: ['Lakehouse architecture', 'Delta Lake', 'Data and AI workloads'],
-    verifyUrl: '#'
+    verifyUrl: 'https://credentials.databricks.com/df2029d1-5097-461a-a5db-92206366b4ed#acc.A2k6Eibf'
   },
   {
     name: 'Google Cloud Essentials',
@@ -191,7 +191,7 @@ const certifications = [
     badgeImage: 'https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png',
     monogram: 'GC',
     skills: ['Cloud computing foundations', 'Google Cloud services', 'Cloud security basics'],
-    verifyUrl: '#'
+    verifyUrl: 'https://www.skills.google/public_profiles/19c37573-3976-4ad5-98f7-fff248678fa3/badges/5966412?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share'
   },
   {
     name: 'AWS Data Engineer Associate Prep Course',
@@ -201,37 +201,37 @@ const certifications = [
     badgeImage: 'Certifications/Udemy_Certificate.jpg',
     monogram: 'AWS',
     skills: ['AWS data services', 'Data engineering foundations', 'Cloud ETL concepts'],
-    verifyUrl: '#'
+    verifyUrl: 'Certifications/Udemy_Certificate.jpg'
   },
   {
     name: 'Introduction to Career Skills in Data Analytics',
     issuer: 'LinkedIn Learning',
     date: 'Date earned: Add date',
     category: 'data',
-    badgeImage: '',
+    badgeImage: 'Certifications/LinkedIn_Learning.png',
     monogram: 'DA',
     skills: ['Data analysis workflow', 'Career readiness', 'Analytical thinking'],
-    verifyUrl: '#'
+    verifyUrl: 'Certifications/Google_Data_Analytics.pdf'
   },
   {
     name: 'Software Development Training Certificate',
     issuer: 'GAO Tek',
     date: 'Date earned: Add date',
     category: 'development',
-    badgeImage: '',
+    badgeImage: 'Certifications/GAO_Tek.pdf',
     monogram: 'SD',
     skills: ['Software development lifecycle', 'Programming fundamentals', 'Technical collaboration'],
-    verifyUrl: '#'
+    verifyUrl: 'Certifications/GAO_Tek.pdf'
   },
   {
     name: 'Q-SYS Level 1 Training Certificate',
     issuer: 'QSC / Q-SYS',
     date: 'Date earned: Add date',
     category: 'technology',
-    badgeImage: '',
+    badgeImage: 'Certifications/Q_SYS.pdf',
     monogram: 'Q-SYS',
     skills: ['AV system fundamentals', 'Q-SYS Designer', 'Audio and video routing'],
-    verifyUrl: '#'
+    verifyUrl: 'Certifications/Q_SYS.pdf'
   }
 ];
 
