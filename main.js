@@ -150,7 +150,7 @@ const observer = new IntersectionObserver(entries => {
   }
 })();
 
-// ── Certification flip cards ────────────────────────────────
+// ── Certification badge shelf ───────────────────────────────
 const certifications = [
   {
     name: 'Implementing Data Engineering Solutions Using Azure Databricks',
@@ -200,86 +200,117 @@ const certifications = [
 ];
 
 (function renderCertificationCards() {
-  const grid = document.getElementById('certs-grid');
-  const template = document.getElementById('cert-card-template');
-  const emptyState = document.getElementById('cert-empty');
-  if (!grid || !template) return;
+  const badgeRow = document.getElementById('cert-badge-row');
+  const detailPanel = document.getElementById('cert-detail-panel');
+  if (!badgeRow || !detailPanel) return;
 
-  function createCard(certification) {
-    const card = template.content.firstElementChild.cloneNode(true);
-    const image = card.querySelector('.cert-image');
-    const monogram = card.querySelector('.cert-monogram');
+  const detailTitle = detailPanel.querySelector('.cert-detail-title');
+  const detailMeta = detailPanel.querySelector('.cert-detail-meta');
+  const skillTags = detailPanel.querySelector('.cert-skill-tags');
+  const verifyLink = detailPanel.querySelector('.cert-verify');
+  const projectLink = detailPanel.querySelector('.cert-project');
+  let selectedIndex = -1;
 
+  function createBadge(certification, index) {
+    const badge = document.createElement('button');
+    badge.className = 'cert-badge-item';
+    badge.type = 'button';
+    badge.setAttribute('role', 'tab');
+    badge.setAttribute('aria-selected', 'false');
+    badge.setAttribute('aria-controls', 'cert-detail-panel');
+
+    const visual = document.createElement('span');
+    visual.className = 'cert-badge-visual';
+
+    const badgeImage = document.createElement('span');
+    badgeImage.className = 'cert-badge-image';
+    const image = document.createElement('img');
+    image.className = 'cert-image';
     image.src = certification.badgeImage;
     image.alt = certification.issuer + ' badge';
+    image.loading = 'lazy';
+    const monogram = document.createElement('span');
+    monogram.className = 'cert-monogram';
     monogram.textContent = certification.monogram;
     monogram.hidden = true;
     image.addEventListener('error', function () {
       image.hidden = true;
       monogram.hidden = false;
     });
+    badgeImage.append(image, monogram);
+    visual.appendChild(badgeImage);
 
-    card.querySelector('.cert-new').hidden = !certification.isNew;
-    card.querySelector('.cert-title').textContent = certification.name;
-    card.querySelector('.cert-issuer').textContent = certification.issuer;
-    card.querySelector('.cert-date').textContent = certification.date;
-    card.querySelector('.cert-back-title').textContent = certification.name;
-    card.querySelector('.cert-verify').href = certification.verifyUrl;
-    card.querySelector('.cert-project').href = certification.projectUrl;
+    if (certification.isNew) {
+      const newTag = document.createElement('span');
+      newTag.className = 'cert-new';
+      newTag.textContent = 'New';
+      visual.appendChild(newTag);
+    }
 
-    const skills = card.querySelector('.cert-skills');
+    const name = document.createElement('span');
+    name.className = 'cert-badge-name';
+    name.textContent = certification.name;
+    const issuer = document.createElement('span');
+    issuer.className = 'cert-badge-issuer';
+    issuer.textContent = certification.issuer;
+    badge.append(visual, name, issuer);
+
+    badge.addEventListener('click', function () {
+      selectBadge(selectedIndex === index ? -1 : index);
+    });
+    badge.addEventListener('keydown', function (event) {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        badgeRow.children[(index + 1) % certifications.length].focus();
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        badgeRow.children[(index - 1 + certifications.length) % certifications.length].focus();
+      }
+      if (event.key === 'Home') {
+        event.preventDefault();
+        badgeRow.firstElementChild.focus();
+      }
+      if (event.key === 'End') {
+        event.preventDefault();
+        badgeRow.lastElementChild.focus();
+      }
+    });
+    return badge;
+  }
+
+  function selectBadge(index) {
+    selectedIndex = index;
+    const hasSelection = index >= 0;
+    badgeRow.classList.toggle('has-selection', hasSelection);
+    Array.from(badgeRow.children).forEach(function (badge, badgeIndex) {
+      const selected = badgeIndex === index;
+      badge.classList.toggle('is-selected', selected);
+      badge.setAttribute('aria-selected', selected);
+    });
+
+    if (!hasSelection) {
+      detailPanel.hidden = true;
+      return;
+    }
+
+    const certification = certifications[index];
+    detailTitle.textContent = certification.name;
+    detailMeta.textContent = certification.issuer + ' · ' + certification.date;
+    skillTags.replaceChildren();
     certification.skills.forEach(function (skill) {
-      const item = document.createElement('li');
-      item.textContent = skill;
-      skills.appendChild(item);
+      const tag = document.createElement('span');
+      tag.className = 'cert-skill-tag';
+      tag.textContent = skill;
+      skillTags.appendChild(tag);
     });
-
-    card.addEventListener('click', function (event) {
-      if (event.target.closest('a')) return;
-      card.classList.toggle('is-flipped');
-      card.setAttribute('aria-expanded', card.classList.contains('is-flipped'));
-    });
-
-    card.addEventListener('keydown', function (event) {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      card.classList.toggle('is-flipped');
-      card.setAttribute('aria-expanded', card.classList.contains('is-flipped'));
-    });
-
-    return card;
+    verifyLink.href = certification.verifyUrl;
+    projectLink.href = certification.projectUrl;
+    detailPanel.hidden = false;
   }
 
-  function showCategory(category) {
-    const cards = Array.from(grid.children);
-    cards.forEach(function (card) {
-      card.classList.add('is-hiding');
-    });
-
-    setTimeout(function () {
-      let visibleCount = 0;
-      cards.forEach(function (card, index) {
-        const matches = category === 'all' || certifications[index].category === category;
-        card.hidden = !matches;
-        if (matches) {
-          visibleCount += 1;
-          card.classList.remove('is-hiding');
-        }
-      });
-      emptyState.hidden = visibleCount > 0;
-    }, 180);
-  }
-
-  certifications.forEach(function (certification) {
-    grid.appendChild(createCard(certification));
+  certifications.forEach(function (certification, index) {
+    badgeRow.appendChild(createBadge(certification, index));
   });
-
-  document.querySelectorAll('[data-cert-filter]').forEach(function (button) {
-    button.addEventListener('click', function () {
-      document.querySelectorAll('[data-cert-filter]').forEach(function (filter) {
-        filter.classList.toggle('is-active', filter === button);
-      });
-      showCategory(button.dataset.certFilter);
-    });
-  });
+  selectBadge(0);
 })();

@@ -338,44 +338,21 @@
     
     <section class="certifications" id="certifications">
         <h1 class="my-heading text-center">Certifications</h1>
-        <p class="skills-subheading">Flip a card to explore the skills behind each credential</p>
-        <div class="cert-filters" role="group" aria-label="Filter certifications">
-            <button class="cert-filter is-active" type="button" data-cert-filter="all">All</button>
-            <button class="cert-filter" type="button" data-cert-filter="azure">Azure</button>
-            <button class="cert-filter" type="button" data-cert-filter="databricks">Databricks</button>
-            <button class="cert-filter" type="button" data-cert-filter="google-cloud">Google Cloud</button>
-        </div>
-        <div class="certs-grid" id="certs-grid" aria-live="polite"></div>
-        <p class="cert-empty" id="cert-empty" hidden>No certifications match this filter.</p>
-        <template id="cert-card-template">
-            <article class="cert-card" tabindex="0" aria-expanded="false">
-                <div class="cert-card-inner">
-                    <div class="cert-face cert-front">
-                        <div class="cert-badge-image">
-                            <img class="cert-image" alt="" loading="lazy">
-                            <span class="cert-monogram" aria-hidden="true"></span>
-                        </div>
-                        <div class="cert-front-content">
-                            <span class="cert-new" hidden>New</span>
-                            <h3 class="cert-title"></h3>
-                            <p class="cert-issuer"></p>
-                            <p class="cert-date"></p>
-                            <span class="cert-flip-hint">Hover or tap to explore <span aria-hidden="true">↻</span></span>
-                        </div>
-                    </div>
-                    <div class="cert-face cert-back">
-                        <span class="cert-back-label">What it covers</span>
-                        <h3 class="cert-back-title"></h3>
-                        <ul class="cert-skills"></ul>
-                        <div class="cert-actions">
-                            <a class="cert-verify" href="#" target="_blank" rel="noopener">Verify <span aria-hidden="true">↗</span></a>
-                            <a class="cert-project" href="#" target="_blank" rel="noopener">Used in project <span aria-hidden="true">↗</span></a>
-                        </div>
-                    </div>
+        <p class="skills-subheading">A shelf of credentials built across data, cloud, and AI</p>
+        <div class="cert-shelf" id="cert-shelf">
+            <div class="cert-badge-row" id="cert-badge-row" role="tablist" aria-label="Certifications"></div>
+            <section class="cert-detail-panel" id="cert-detail-panel" role="tabpanel" aria-live="polite" hidden>
+                <div class="cert-detail-copy">
+                    <span class="cert-detail-label">Selected credential</span>
+                    <h2 class="cert-detail-title"></h2>
+                    <p class="cert-detail-meta"></p>
+                    <div class="cert-skill-tags"></div>
                 </div>
-            </article>
-        </template>
-        </div>
+                <div class="cert-detail-actions">
+                    <a class="cert-verify" href="#" target="_blank" rel="noopener">Verify <span aria-hidden="true">↗</span></a>
+                    <a class="cert-project" href="#" target="_blank" rel="noopener">Used in project <span aria-hidden="true">↗</span></a>
+                </div>
+            </section>
         </div>
     </section>
 
