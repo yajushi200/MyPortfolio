@@ -150,3 +150,136 @@ const observer = new IntersectionObserver(entries => {
   }
 })();
 
+// ── Certification flip cards ────────────────────────────────
+const certifications = [
+  {
+    name: 'Implementing Data Engineering Solutions Using Azure Databricks',
+    issuer: 'Microsoft',
+    date: 'Date earned: Add date',
+    category: 'azure',
+    badgeImage: 'https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png',
+    monogram: 'MS',
+    isNew: true,
+    skills: ['Azure Databricks', 'Data engineering solutions', 'Lakehouse architecture'],
+    verifyUrl: '#',
+    projectUrl: 'https://github.com/yajushi200/f1-azure-databricks-lakehouse'
+  },
+  {
+    name: 'Microsoft Azure Data Fundamentals (DP-900)',
+    issuer: 'Microsoft',
+    date: 'Date earned: Add date',
+    category: 'azure',
+    badgeImage: 'https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png',
+    monogram: 'MS',
+    skills: ['Core data concepts', 'Relational and non-relational data', 'Azure data services'],
+    verifyUrl: '#',
+    projectUrl: 'https://github.com/yajushi200/f1-azure-databricks-lakehouse'
+  },
+  {
+    name: 'Databricks Lakehouse Fundamentals',
+    issuer: 'Databricks',
+    date: 'Date earned: Add date',
+    category: 'databricks',
+    badgeImage: 'https://www.databricks.com/sites/default/files/2022-05/databricks-logo.png',
+    monogram: 'DB',
+    skills: ['Lakehouse architecture', 'Delta Lake', 'Data and AI workloads'],
+    verifyUrl: '#',
+    projectUrl: 'https://github.com/yajushi200/f1-azure-databricks-lakehouse'
+  },
+  {
+    name: 'Google Cloud Essentials',
+    issuer: 'Google Cloud',
+    date: 'Date earned: Add date',
+    category: 'google-cloud',
+    badgeImage: 'https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png',
+    monogram: 'GC',
+    skills: ['Cloud computing foundations', 'Google Cloud services', 'Cloud security basics'],
+    verifyUrl: '#',
+    projectUrl: 'https://github.com/yajushi200/f1-azure-databricks-lakehouse'
+  }
+];
+
+(function renderCertificationCards() {
+  const grid = document.getElementById('certs-grid');
+  const template = document.getElementById('cert-card-template');
+  const emptyState = document.getElementById('cert-empty');
+  if (!grid || !template) return;
+
+  function createCard(certification) {
+    const card = template.content.firstElementChild.cloneNode(true);
+    const image = card.querySelector('.cert-image');
+    const monogram = card.querySelector('.cert-monogram');
+
+    image.src = certification.badgeImage;
+    image.alt = certification.issuer + ' badge';
+    monogram.textContent = certification.monogram;
+    monogram.hidden = true;
+    image.addEventListener('error', function () {
+      image.hidden = true;
+      monogram.hidden = false;
+    });
+
+    card.querySelector('.cert-new').hidden = !certification.isNew;
+    card.querySelector('.cert-title').textContent = certification.name;
+    card.querySelector('.cert-issuer').textContent = certification.issuer;
+    card.querySelector('.cert-date').textContent = certification.date;
+    card.querySelector('.cert-back-title').textContent = certification.name;
+    card.querySelector('.cert-verify').href = certification.verifyUrl;
+    card.querySelector('.cert-project').href = certification.projectUrl;
+
+    const skills = card.querySelector('.cert-skills');
+    certification.skills.forEach(function (skill) {
+      const item = document.createElement('li');
+      item.textContent = skill;
+      skills.appendChild(item);
+    });
+
+    card.addEventListener('click', function (event) {
+      if (event.target.closest('a')) return;
+      card.classList.toggle('is-flipped');
+      card.setAttribute('aria-expanded', card.classList.contains('is-flipped'));
+    });
+
+    card.addEventListener('keydown', function (event) {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      card.classList.toggle('is-flipped');
+      card.setAttribute('aria-expanded', card.classList.contains('is-flipped'));
+    });
+
+    return card;
+  }
+
+  function showCategory(category) {
+    const cards = Array.from(grid.children);
+    cards.forEach(function (card) {
+      card.classList.add('is-hiding');
+    });
+
+    setTimeout(function () {
+      let visibleCount = 0;
+      cards.forEach(function (card, index) {
+        const matches = category === 'all' || certifications[index].category === category;
+        card.hidden = !matches;
+        if (matches) {
+          visibleCount += 1;
+          card.classList.remove('is-hiding');
+        }
+      });
+      emptyState.hidden = visibleCount > 0;
+    }, 180);
+  }
+
+  certifications.forEach(function (certification) {
+    grid.appendChild(createCard(certification));
+  });
+
+  document.querySelectorAll('[data-cert-filter]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      document.querySelectorAll('[data-cert-filter]').forEach(function (filter) {
+        filter.classList.toggle('is-active', filter === button);
+      });
+      showCategory(button.dataset.certFilter);
+    });
+  });
+})();
