@@ -155,7 +155,7 @@ const certifications = [
   {
     name: 'Implementing Data Engineering Solutions Using Azure Databricks',
     issuer: 'Microsoft Certified: Associate',
-    date: 'Recently achieved',
+    date: 'Nov 2026',
     category: 'azure',
     badgeImage: 'Certifications/Microsoft_Azure_Databricks_Associate.png',
     monogram: 'MS',
@@ -165,13 +165,13 @@ const certifications = [
   },
   {
     name: 'Microsoft Azure Data Fundamentals (DP-900)',
-    issuer: 'Microsoft',
+    issuer: 'Microsoft Certified: Fundamentals',
     date: 'Date earned: Add date',
     category: 'azure',
-    badgeImage: 'https://learn.microsoft.com/en-us/media/logos/logo-ms-social.png',
+    badgeImage: 'Certifications/Microsoft_Azure_Data_Fundamentals.png',
     monogram: 'MS',
     skills: ['Core data concepts', 'Relational and non-relational data', 'Azure data services'],
-    verifyUrl: '#',
+    verifyUrl: 'https://learn.microsoft.com/en-us/users/yajushigarg-0213/credentials/certification/azure-data-fundamentals?tab=credentials-tab',
   },
   {
     name: 'Databricks Lakehouse Fundamentals',
@@ -191,6 +191,46 @@ const certifications = [
     badgeImage: 'https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png',
     monogram: 'GC',
     skills: ['Cloud computing foundations', 'Google Cloud services', 'Cloud security basics'],
+    verifyUrl: '#'
+  },
+  {
+    name: 'AWS Data Engineer Associate Prep Course',
+    issuer: 'Udemy',
+    date: 'Date earned: Add date',
+    category: 'cloud',
+    badgeImage: 'Certifications/Udemy_Certificate.jpg',
+    monogram: 'AWS',
+    skills: ['AWS data services', 'Data engineering foundations', 'Cloud ETL concepts'],
+    verifyUrl: '#'
+  },
+  {
+    name: 'Introduction to Career Skills in Data Analytics',
+    issuer: 'LinkedIn Learning',
+    date: 'Date earned: Add date',
+    category: 'data',
+    badgeImage: '',
+    monogram: 'DA',
+    skills: ['Data analysis workflow', 'Career readiness', 'Analytical thinking'],
+    verifyUrl: '#'
+  },
+  {
+    name: 'Software Development Training Certificate',
+    issuer: 'GAO Tek',
+    date: 'Date earned: Add date',
+    category: 'development',
+    badgeImage: '',
+    monogram: 'SD',
+    skills: ['Software development lifecycle', 'Programming fundamentals', 'Technical collaboration'],
+    verifyUrl: '#'
+  },
+  {
+    name: 'Q-SYS Level 1 Training Certificate',
+    issuer: 'QSC / Q-SYS',
+    date: 'Date earned: Add date',
+    category: 'technology',
+    badgeImage: '',
+    monogram: 'Q-SYS',
+    skills: ['AV system fundamentals', 'Q-SYS Designer', 'Audio and video routing'],
     verifyUrl: '#'
   }
 ];
@@ -221,13 +261,14 @@ const certifications = [
     badgeImage.className = 'cert-badge-image';
     const image = document.createElement('img');
     image.className = 'cert-image';
-    image.src = certification.badgeImage;
     image.alt = certification.issuer + ' badge';
     image.loading = 'lazy';
     const monogram = document.createElement('span');
     monogram.className = 'cert-monogram';
     monogram.textContent = certification.monogram;
-    monogram.hidden = true;
+    monogram.hidden = Boolean(certification.badgeImage);
+    image.hidden = !certification.badgeImage;
+    image.src = certification.badgeImage;
     image.addEventListener('error', function () {
       image.hidden = true;
       monogram.hidden = false;
